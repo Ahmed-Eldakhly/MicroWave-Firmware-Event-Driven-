@@ -1,0 +1,183 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F21 `(v ~T0 @X0 0 tf ]
+[v F22 `(v ~T0 @X0 0 tf ]
+[v F26 `(v ~T0 @X0 0 tf ]
+[v F28 `(v ~T0 @X0 0 tf ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+[v F35 `(v ~T0 @X0 0 tf ]
+"29 interrupt.c
+[; ;interrupt.c: 29: static void (*timer0_callback_ptr)(void) = (void*)0x00;
+[v _timer0_callback_ptr `*F21 ~T0 @X0 1 s ]
+[i _timer0_callback_ptr
+-> -> -> 0 `i `*v `*F22
+]
+"42
+[; ;interrupt.c: 42: void Timer0_enable_overflow_interrupt(void)
+[v _Timer0_enable_overflow_interrupt `(v ~T0 @X0 1 ef ]
+"43
+[; ;interrupt.c: 43: {
+{
+[e :U _Timer0_enable_overflow_interrupt ]
+[f ]
+"44
+[; ;interrupt.c: 44:     *(volatile uint8*)0xFF2 |= 1 << 5u;
+[e =| *U -> -> 4082 `i `*Vuc -> << -> 1 `i -> 5 `ui `uc ]
+"45
+[; ;interrupt.c: 45: }
+[e :UE 1 ]
+}
+"58
+[; ;interrupt.c: 58: void Timer0_disable_overflow_interrupt(void)
+[v _Timer0_disable_overflow_interrupt `(v ~T0 @X0 1 ef ]
+"59
+[; ;interrupt.c: 59: {
+{
+[e :U _Timer0_disable_overflow_interrupt ]
+[f ]
+"60
+[; ;interrupt.c: 60:     *(volatile uint8*)0xFF2 &= ~(1 << 5u);
+[e =& *U -> -> 4082 `i `*Vuc -> ~ << -> 1 `i -> 5 `ui `uc ]
+"61
+[; ;interrupt.c: 61: }
+[e :UE 2 ]
+}
+"74
+[; ;interrupt.c: 74: void Timer0_set_callback_function(void(*a_function_ptr)(void))
+[v _Timer0_set_callback_function `(v ~T0 @X0 1 ef1`*F26 ]
+"75
+[; ;interrupt.c: 75: {
+{
+[e :U _Timer0_set_callback_function ]
+"74
+[; ;interrupt.c: 74: void Timer0_set_callback_function(void(*a_function_ptr)(void))
+[v _a_function_ptr `*F28 ~T0 @X0 1 r1 ]
+"75
+[; ;interrupt.c: 75: {
+[f ]
+"77
+[; ;interrupt.c: 77:     timer0_callback_ptr = a_function_ptr;
+[e = _timer0_callback_ptr _a_function_ptr ]
+"78
+[; ;interrupt.c: 78: }
+[e :UE 3 ]
+}
+"1266
+[; ;interrupt.c: 1266: void Global_interrupt_enable(void)
+[v _Global_interrupt_enable `(v ~T0 @X0 1 ef ]
+"1267
+[; ;interrupt.c: 1267: {
+{
+[e :U _Global_interrupt_enable ]
+[f ]
+"1268
+[; ;interrupt.c: 1268:     *(volatile uint8*)0xFF2 |= 1 << 7u;
+[e =| *U -> -> 4082 `i `*Vuc -> << -> 1 `i -> 7 `ui `uc ]
+"1269
+[; ;interrupt.c: 1269: }
+[e :UE 4 ]
+}
+"1283
+[; ;interrupt.c: 1283: void Global_interrupt_disable(void)
+[v _Global_interrupt_disable `(v ~T0 @X0 1 ef ]
+"1284
+[; ;interrupt.c: 1284: {
+{
+[e :U _Global_interrupt_disable ]
+[f ]
+"1285
+[; ;interrupt.c: 1285:     *(volatile uint8*)0xFF2 &= ~(1 << 7u);
+[e =& *U -> -> 4082 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"1286
+[; ;interrupt.c: 1286: }
+[e :UE 5 ]
+}
+"1300
+[; ;interrupt.c: 1300: void Peripherals_interrupt_enable(void)
+[v _Peripherals_interrupt_enable `(v ~T0 @X0 1 ef ]
+"1301
+[; ;interrupt.c: 1301: {
+{
+[e :U _Peripherals_interrupt_enable ]
+[f ]
+"1302
+[; ;interrupt.c: 1302:     *(volatile uint8*)0xFF2 |= 1 << 6u;
+[e =| *U -> -> 4082 `i `*Vuc -> << -> 1 `i -> 6 `ui `uc ]
+"1303
+[; ;interrupt.c: 1303: }
+[e :UE 6 ]
+}
+"1317
+[; ;interrupt.c: 1317: void Peripherals_interrupt_disable(void)
+[v _Peripherals_interrupt_disable `(v ~T0 @X0 1 ef ]
+"1318
+[; ;interrupt.c: 1318: {
+{
+[e :U _Peripherals_interrupt_disable ]
+[f ]
+"1319
+[; ;interrupt.c: 1319:     *(volatile uint8*)0xFF2 &= ~(1 << 6u);
+[e =& *U -> -> 4082 `i `*Vuc -> ~ << -> 1 `i -> 6 `ui `uc ]
+"1320
+[; ;interrupt.c: 1320: }
+[e :UE 7 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"1335
+[; ;interrupt.c: 1335: void __attribute__((picinterrupt(("")))) ISR(void)
+[v _ISR `(v ~T1 @X0 1 ef ]
+"1336
+[; ;interrupt.c: 1336: {
+{
+[e :U _ISR ]
+[f ]
+"1340
+[; ;interrupt.c: 1340:     if((*(volatile uint8*)0xFF2 >> 2u) & 0x01)
+[e $ ! != & >> -> *U -> -> 4082 `i `*Vuc `i -> 2 `ui -> 1 `i -> 0 `i 9  ]
+"1341
+[; ;interrupt.c: 1341:     {
+{
+"1343
+[; ;interrupt.c: 1343:         if(timer0_callback_ptr != (void*)0x00)
+[e $ ! != _timer0_callback_ptr -> -> -> 0 `i `*v `*F35 10  ]
+"1344
+[; ;interrupt.c: 1344:         {
+{
+"1346
+[; ;interrupt.c: 1346:             timer0_callback_ptr();
+[e ( *U _timer0_callback_ptr ..  ]
+"1347
+[; ;interrupt.c: 1347:         }
+}
+[e $U 11  ]
+"1348
+[; ;interrupt.c: 1348:         else
+[e :U 10 ]
+"1349
+[; ;interrupt.c: 1349:         {
+{
+"1351
+[; ;interrupt.c: 1351:         }
+}
+[e :U 11 ]
+"1353
+[; ;interrupt.c: 1353:         *(volatile uint8*)0xFF2 &= ~(1 << 2u);
+[e =& *U -> -> 4082 `i `*Vuc -> ~ << -> 1 `i -> 2 `ui `uc ]
+"1354
+[; ;interrupt.c: 1354:     }
+}
+[e $U 12  ]
+"1355
+[; ;interrupt.c: 1355:     else
+[e :U 9 ]
+"1356
+[; ;interrupt.c: 1356:     {
+{
+"1358
+[; ;interrupt.c: 1358:     }
+}
+[e :U 12 ]
+"1811
+[; ;interrupt.c: 1811: }
+[e :UE 8 ]
+}

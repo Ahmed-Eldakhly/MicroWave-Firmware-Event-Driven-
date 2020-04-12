@@ -1,0 +1,394 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"41 timers.c
+[; ;timers.c: 41:     if(Timer0_config_t.timer_size_t == TIMER_8BIT_SIZE)
+[c E18 0 1 2 3 4 5 6 7 8 .. ]
+[n E18 . TIMER0_PRESCALER_2 TIMER0_PRESCALER_4 TIMER0_PRESCALER_8 TIMER0_PRESCALER_16 TIMER0_PRESCALER_32 TIMER0_PRESCALER_64 TIMER0_PRESCALER_128 TIMER0_PRESCALER_256 TIMER0_NO_PRESCALER  ]
+[c E10 0 1 .. ]
+[n E10 . TIMER_8BIT_SIZE TIMER_16BIT_SIZE  ]
+[c E14 0 1 .. ]
+[n E14 . TIMER_INTERNAL_CLOCK TIMER_TRANSITION_ON_TCKI_PIN  ]
+[c E29 0 1 2 .. ]
+[n E29 . TIMER0_RISING_EDGE_CLOCK_ON_TCKI TIMER0_FALLING_EDGE_CLOCK_ON_TCKI TIMER0_NO_TRANSITION_ON_TCKI  ]
+"68 ./timers.h
+[; ;./timers.h: 68: typedef struct{
+[s S1 `E18 1 `E10 1 `E14 1 `E29 1 ]
+[n S1 . timer_prescaler_t timer_size_t timer_clock_source_t timer_edge_type_on_TCKI_t ]
+"79
+[; ;./timers.h: 79: extern StrTimer0_config_t Timer0_config_t;
+[v _Timer0_config_t `S1 ~T0 @X0 0 e ]
+"440 timers.c
+[; ;timers.c: 440:     *(volatile uint8*)0xFCA = Timer2_config_t.timer_postscaler_t << 3;
+[c E47 0 1 2 .. ]
+[n E47 . TIMER2_NO_PRESCALER TIMER2_PRESCALER_4 TIMER2_PRESCALER_16  ]
+[c E52 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E52 . TIMER2_POSTSCALER_1 TIMER2_POSTSCALER_2 TIMER2_POSTSCALER_3 TIMER2_POSTSCALER_4 TIMER2_POSTSCALER_5 TIMER2_POSTSCALER_6 TIMER2_POSTSCALER_7 TIMER2_POSTSCALER_8 TIMER2_POSTSCALER_9 TIMER2_POSTSCALER_10 TIMER2_POSTSCALER_11 TIMER2_POSTSCALER_12 TIMER2_POSTSCALER_13 TIMER2_POSTSCALER_14 TIMER2_POSTSCALER_15 TIMER2_POSTSCALER_16  ]
+"376 ./timers.h
+[; ;./timers.h: 376: typedef struct{
+[s S2 `E47 1 `E52 1 ]
+[n S2 . timer_prescaler_t timer_postscaler_t ]
+"385
+[; ;./timers.h: 385: extern StrTimer2_config_t Timer2_config_t;
+[v _Timer2_config_t `S2 ~T0 @X0 0 e ]
+"39 timers.c
+[; ;timers.c: 39: void Timer0_Initialization(void)
+[v _Timer0_Initialization `(v ~T0 @X0 1 ef ]
+"40
+[; ;timers.c: 40: {
+{
+[e :U _Timer0_Initialization ]
+[f ]
+"41
+[; ;timers.c: 41:     if(Timer0_config_t.timer_size_t == TIMER_8BIT_SIZE)
+[e $ ! == -> . _Timer0_config_t 1 `ui -> . `E10 0 `ui 4  ]
+"42
+[; ;timers.c: 42:     {
+{
+"43
+[; ;timers.c: 43:         *(volatile uint8*)0xFD5 |= 1 << 6u;
+[e =| *U -> -> 4053 `i `*Vuc -> << -> 1 `i -> 6 `ui `uc ]
+"44
+[; ;timers.c: 44:     }
+}
+[e $U 5  ]
+"45
+[; ;timers.c: 45:     else
+[e :U 4 ]
+"46
+[; ;timers.c: 46:     {
+{
+"47
+[; ;timers.c: 47:         *(volatile uint8*)0xFD5 &= ~(1 << 6u);
+[e =& *U -> -> 4053 `i `*Vuc -> ~ << -> 1 `i -> 6 `ui `uc ]
+"48
+[; ;timers.c: 48:     }
+}
+[e :U 5 ]
+"50
+[; ;timers.c: 50:     if(Timer0_config_t.timer_clock_source_t == TIMER_INTERNAL_CLOCK)
+[e $ ! == -> . _Timer0_config_t 2 `ui -> . `E14 0 `ui 6  ]
+"51
+[; ;timers.c: 51:     {
+{
+"52
+[; ;timers.c: 52:         *(volatile uint8*)0xFD5 &= ~(1 << 5u);
+[e =& *U -> -> 4053 `i `*Vuc -> ~ << -> 1 `i -> 5 `ui `uc ]
+"53
+[; ;timers.c: 53:     }
+}
+[e $U 7  ]
+"54
+[; ;timers.c: 54:     else
+[e :U 6 ]
+"55
+[; ;timers.c: 55:     {
+{
+"56
+[; ;timers.c: 56:         *(volatile uint8*)0xFD5 |= 1 << 5u;
+[e =| *U -> -> 4053 `i `*Vuc -> << -> 1 `i -> 5 `ui `uc ]
+"57
+[; ;timers.c: 57:     }
+}
+[e :U 7 ]
+"59
+[; ;timers.c: 59:     if(Timer0_config_t.timer_clock_source_t != TIMER_INTERNAL_CLOCK)
+[e $ ! != -> . _Timer0_config_t 2 `ui -> . `E14 0 `ui 8  ]
+"60
+[; ;timers.c: 60:     {
+{
+"61
+[; ;timers.c: 61:         *(volatile uint8*)0xFD5 &= 0xEF;
+[e =& *U -> -> 4053 `i `*Vuc -> -> 239 `i `uc ]
+"62
+[; ;timers.c: 62:         *(volatile uint8*)0xFD5 |= Timer0_config_t.timer_edge_type_on_TCKI_t << 4;
+[e =| *U -> -> 4053 `i `*Vuc -> << -> . _Timer0_config_t 3 `ui -> 4 `i `uc ]
+"63
+[; ;timers.c: 63:     }
+}
+[e $U 9  ]
+"64
+[; ;timers.c: 64:     else
+[e :U 8 ]
+"65
+[; ;timers.c: 65:     {
+{
+"67
+[; ;timers.c: 67:     }
+}
+[e :U 9 ]
+"69
+[; ;timers.c: 69:     if(Timer0_config_t.timer_prescaler_t != TIMER0_NO_PRESCALER)
+[e $ ! != -> . _Timer0_config_t 0 `ui -> . `E18 8 `ui 10  ]
+"70
+[; ;timers.c: 70:     {
+{
+"71
+[; ;timers.c: 71:         *(volatile uint8*)0xFD5 &= 0xF0;
+[e =& *U -> -> 4053 `i `*Vuc -> -> 240 `i `uc ]
+"72
+[; ;timers.c: 72:         *(volatile uint8*)0xFD5 |= Timer0_config_t.timer_prescaler_t;
+[e =| *U -> -> 4053 `i `*Vuc -> . _Timer0_config_t 0 `uc ]
+"73
+[; ;timers.c: 73:     }
+}
+[e $U 11  ]
+"74
+[; ;timers.c: 74:     else
+[e :U 10 ]
+"75
+[; ;timers.c: 75:     {
+{
+"76
+[; ;timers.c: 76:         *(volatile uint8*)0xFD5 |= 0x08;
+[e =| *U -> -> 4053 `i `*Vuc -> -> 8 `i `uc ]
+"77
+[; ;timers.c: 77:     }
+}
+[e :U 11 ]
+"78
+[; ;timers.c: 78: }
+[e :UE 3 ]
+}
+"91
+[; ;timers.c: 91: void Timer0_enable(void)
+[v _Timer0_enable `(v ~T0 @X0 1 ef ]
+"92
+[; ;timers.c: 92: {
+{
+[e :U _Timer0_enable ]
+[f ]
+"93
+[; ;timers.c: 93:     *(volatile uint8*)0xFD5 |= 1 << 7u;
+[e =| *U -> -> 4053 `i `*Vuc -> << -> 1 `i -> 7 `ui `uc ]
+"94
+[; ;timers.c: 94: }
+[e :UE 12 ]
+}
+"107
+[; ;timers.c: 107: void Timer0_disable(void)
+[v _Timer0_disable `(v ~T0 @X0 1 ef ]
+"108
+[; ;timers.c: 108: {
+{
+[e :U _Timer0_disable ]
+[f ]
+"109
+[; ;timers.c: 109:     *(volatile uint8*)0xFD5 &= ~(1 << 7u);
+[e =& *U -> -> 4053 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"110
+[; ;timers.c: 110: }
+[e :UE 13 ]
+}
+"123
+[; ;timers.c: 123: uint16 Timer0_read_counter(void)
+[v _Timer0_read_counter `(us ~T0 @X0 1 ef ]
+"124
+[; ;timers.c: 124: {
+{
+[e :U _Timer0_read_counter ]
+[f ]
+"125
+[; ;timers.c: 125:     uint16 retVal;
+[v _retVal `us ~T0 @X0 1 a ]
+"127
+[; ;timers.c: 127:     if(Timer0_config_t.timer_size_t == TIMER_8BIT_SIZE)
+[e $ ! == -> . _Timer0_config_t 1 `ui -> . `E10 0 `ui 15  ]
+"128
+[; ;timers.c: 128:     {
+{
+"129
+[; ;timers.c: 129:         retVal = *(volatile uint8*)0xFD6;
+[e = _retVal -> *U -> -> 4054 `i `*Vuc `us ]
+"130
+[; ;timers.c: 130:     }
+}
+[e $U 16  ]
+"131
+[; ;timers.c: 131:     else
+[e :U 15 ]
+"132
+[; ;timers.c: 132:     {
+{
+"133
+[; ;timers.c: 133:         retVal = *(volatile uint8*)0xFD6;
+[e = _retVal -> *U -> -> 4054 `i `*Vuc `us ]
+"134
+[; ;timers.c: 134:         retVal |= ((uint16)*(volatile uint8*)0xFD7) << 8;
+[e =| _retVal -> << -> -> *U -> -> 4055 `i `*Vuc `us `ui -> 8 `i `us ]
+"135
+[; ;timers.c: 135:     }
+}
+[e :U 16 ]
+"136
+[; ;timers.c: 136:     return retVal;
+[e ) _retVal ]
+[e $UE 14  ]
+"137
+[; ;timers.c: 137: }
+[e :UE 14 ]
+}
+"151
+[; ;timers.c: 151: void Timer0_write_counter(uint16 a_u16init_value_for_timer)
+[v _Timer0_write_counter `(v ~T0 @X0 1 ef1`us ]
+"152
+[; ;timers.c: 152: {
+{
+[e :U _Timer0_write_counter ]
+"151
+[; ;timers.c: 151: void Timer0_write_counter(uint16 a_u16init_value_for_timer)
+[v _a_u16init_value_for_timer `us ~T0 @X0 1 r1 ]
+"152
+[; ;timers.c: 152: {
+[f ]
+"154
+[; ;timers.c: 154:     if(Timer0_config_t.timer_size_t == TIMER_8BIT_SIZE)
+[e $ ! == -> . _Timer0_config_t 1 `ui -> . `E10 0 `ui 18  ]
+"155
+[; ;timers.c: 155:     {
+{
+"156
+[; ;timers.c: 156:         *(volatile uint8*)0xFD6 = (uint8)a_u16init_value_for_timer;
+[e = *U -> -> 4054 `i `*Vuc -> _a_u16init_value_for_timer `uc ]
+"157
+[; ;timers.c: 157:     }
+}
+[e $U 19  ]
+"158
+[; ;timers.c: 158:     else
+[e :U 18 ]
+"159
+[; ;timers.c: 159:     {
+{
+"160
+[; ;timers.c: 160:         *(volatile uint8*)0xFD7 = a_u16init_value_for_timer >> 8;
+[e = *U -> -> 4055 `i `*Vuc -> >> -> _a_u16init_value_for_timer `ui -> 8 `i `uc ]
+"161
+[; ;timers.c: 161:         *(volatile uint8*)0xFD6 = (uint8)a_u16init_value_for_timer;
+[e = *U -> -> 4054 `i `*Vuc -> _a_u16init_value_for_timer `uc ]
+"162
+[; ;timers.c: 162:     }
+}
+[e :U 19 ]
+"163
+[; ;timers.c: 163: }
+[e :UE 17 ]
+}
+"437
+[; ;timers.c: 437: void Timer2_Initialization(void)
+[v _Timer2_Initialization `(v ~T0 @X0 1 ef ]
+"438
+[; ;timers.c: 438: {
+{
+[e :U _Timer2_Initialization ]
+[f ]
+"440
+[; ;timers.c: 440:     *(volatile uint8*)0xFCA = Timer2_config_t.timer_postscaler_t << 3;
+[e = *U -> -> 4042 `i `*Vuc -> << -> . _Timer2_config_t 1 `ui -> 3 `i `uc ]
+"442
+[; ;timers.c: 442:     *(volatile uint8*)0xFCA |= Timer2_config_t.timer_prescaler_t;
+[e =| *U -> -> 4042 `i `*Vuc -> . _Timer2_config_t 0 `uc ]
+"443
+[; ;timers.c: 443: }
+[e :UE 20 ]
+}
+"456
+[; ;timers.c: 456: void Timer2_enable(void)
+[v _Timer2_enable `(v ~T0 @X0 1 ef ]
+"457
+[; ;timers.c: 457: {
+{
+[e :U _Timer2_enable ]
+[f ]
+"458
+[; ;timers.c: 458:     *(volatile uint8*)0xFCA |= 1 << 2u;
+[e =| *U -> -> 4042 `i `*Vuc -> << -> 1 `i -> 2 `ui `uc ]
+"459
+[; ;timers.c: 459: }
+[e :UE 21 ]
+}
+"472
+[; ;timers.c: 472: void Timer2_disable(void)
+[v _Timer2_disable `(v ~T0 @X0 1 ef ]
+"473
+[; ;timers.c: 473: {
+{
+[e :U _Timer2_disable ]
+[f ]
+"474
+[; ;timers.c: 474:     *(volatile uint8*)0xFCA &= ~(1 << 2u);
+[e =& *U -> -> 4042 `i `*Vuc -> ~ << -> 1 `i -> 2 `ui `uc ]
+"475
+[; ;timers.c: 475: }
+[e :UE 22 ]
+}
+"488
+[; ;timers.c: 488: uint8 Timer2_read_counter(void)
+[v _Timer2_read_counter `(uc ~T0 @X0 1 ef ]
+"489
+[; ;timers.c: 489: {
+{
+[e :U _Timer2_read_counter ]
+[f ]
+"490
+[; ;timers.c: 490:     return *(volatile uint8*)0xFCC;
+[e ) *U -> -> 4044 `i `*Vuc ]
+[e $UE 23  ]
+"491
+[; ;timers.c: 491: }
+[e :UE 23 ]
+}
+"505
+[; ;timers.c: 505: void Timer2_write_counter(uint8 a_u8init_value_for_timer)
+[v _Timer2_write_counter `(v ~T0 @X0 1 ef1`uc ]
+"506
+[; ;timers.c: 506: {
+{
+[e :U _Timer2_write_counter ]
+"505
+[; ;timers.c: 505: void Timer2_write_counter(uint8 a_u8init_value_for_timer)
+[v _a_u8init_value_for_timer `uc ~T0 @X0 1 r1 ]
+"506
+[; ;timers.c: 506: {
+[f ]
+"507
+[; ;timers.c: 507:     *(volatile uint8*)0xFCC = a_u8init_value_for_timer;
+[e = *U -> -> 4044 `i `*Vuc _a_u8init_value_for_timer ]
+"508
+[; ;timers.c: 508: }
+[e :UE 24 ]
+}
+"522
+[; ;timers.c: 522: uint8 Timer2_read_period_register(void)
+[v _Timer2_read_period_register `(uc ~T0 @X0 1 ef ]
+"523
+[; ;timers.c: 523: {
+{
+[e :U _Timer2_read_period_register ]
+[f ]
+"524
+[; ;timers.c: 524:     return *(volatile uint8*)0xFCB;
+[e ) *U -> -> 4043 `i `*Vuc ]
+[e $UE 25  ]
+"525
+[; ;timers.c: 525: }
+[e :UE 25 ]
+}
+"539
+[; ;timers.c: 539: void Timer2_write_period_register(uint8 a_u8init_value_for_period_register)
+[v _Timer2_write_period_register `(v ~T0 @X0 1 ef1`uc ]
+"540
+[; ;timers.c: 540: {
+{
+[e :U _Timer2_write_period_register ]
+"539
+[; ;timers.c: 539: void Timer2_write_period_register(uint8 a_u8init_value_for_period_register)
+[v _a_u8init_value_for_period_register `uc ~T0 @X0 1 r1 ]
+"540
+[; ;timers.c: 540: {
+[f ]
+"541
+[; ;timers.c: 541:     *(volatile uint8*)0xFCB = a_u8init_value_for_period_register;
+[e = *U -> -> 4043 `i `*Vuc _a_u8init_value_for_period_register ]
+"542
+[; ;timers.c: 542: }
+[e :UE 26 ]
+}

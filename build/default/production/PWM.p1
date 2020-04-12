@@ -1,0 +1,502 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"44 PWM.c
+[; ;PWM.c: 44: void PWM_Initialization(EnumPWM_channel_t a_PWM_channel_t)
+[c E10 0 1 .. ]
+[n E10 . PWM_CHANNEL_1 PWM_CHANNEL_2  ]
+"47
+[; ;PWM.c: 47:     Timer2_config_t.timer_postscaler_t = TIMER2_POSTSCALER_1;
+[c E62 0 1 2 .. ]
+[n E62 . TIMER2_NO_PRESCALER TIMER2_PRESCALER_4 TIMER2_PRESCALER_16  ]
+[c E67 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E67 . TIMER2_POSTSCALER_1 TIMER2_POSTSCALER_2 TIMER2_POSTSCALER_3 TIMER2_POSTSCALER_4 TIMER2_POSTSCALER_5 TIMER2_POSTSCALER_6 TIMER2_POSTSCALER_7 TIMER2_POSTSCALER_8 TIMER2_POSTSCALER_9 TIMER2_POSTSCALER_10 TIMER2_POSTSCALER_11 TIMER2_POSTSCALER_12 TIMER2_POSTSCALER_13 TIMER2_POSTSCALER_14 TIMER2_POSTSCALER_15 TIMER2_POSTSCALER_16  ]
+"376 ./timers.h
+[; ;./timers.h: 376: typedef struct{
+[s S2 `E62 1 `E67 1 ]
+[n S2 . timer_prescaler_t timer_postscaler_t ]
+"385
+[; ;./timers.h: 385: extern StrTimer2_config_t Timer2_config_t;
+[v _Timer2_config_t `S2 ~T0 @X0 0 e ]
+"483
+[; ;./timers.h: 483: extern void Timer2_write_period_register(uint8 a_u8init_value_for_period_register);
+[v _Timer2_write_period_register `(v ~T0 @X0 0 ef1`uc ]
+"403
+[; ;./timers.h: 403: extern void Timer2_Initialization(void);
+[v _Timer2_Initialization `(v ~T0 @X0 0 ef ]
+"416
+[; ;./timers.h: 416: extern void Timer2_enable(void);
+[v _Timer2_enable `(v ~T0 @X0 0 ef ]
+"25 PWM.c
+[; ;PWM.c: 25: static uint16 g_u16PWM_reg_value_at_100DutyCycle = 0;
+[v _g_u16PWM_reg_value_at_100DutyCycle `us ~T0 @X0 1 s ]
+[i _g_u16PWM_reg_value_at_100DutyCycle
+-> -> 0 `i `us
+]
+"44
+[; ;PWM.c: 44: void PWM_Initialization(EnumPWM_channel_t a_PWM_channel_t)
+[v _PWM_Initialization `(v ~T0 @X0 1 ef1`E10 ]
+"45
+[; ;PWM.c: 45: {
+{
+[e :U _PWM_Initialization ]
+"44
+[; ;PWM.c: 44: void PWM_Initialization(EnumPWM_channel_t a_PWM_channel_t)
+[v _a_PWM_channel_t `E10 ~T0 @X0 1 r1 ]
+"45
+[; ;PWM.c: 45: {
+[f ]
+"47
+[; ;PWM.c: 47:     Timer2_config_t.timer_postscaler_t = TIMER2_POSTSCALER_1;
+[e = . _Timer2_config_t 1 . `E67 0 ]
+"49
+[; ;PWM.c: 49:     if(a_PWM_channel_t == PWM_CHANNEL_1)
+[e $ ! == -> _a_PWM_channel_t `ui -> . `E10 0 `ui 4  ]
+"50
+[; ;PWM.c: 50:     {
+{
+"51
+[; ;PWM.c: 51:         *(volatile uint8*)0xF94 &= ~(1 << 2);
+[e =& *U -> -> 3988 `i `*Vuc -> ~ << -> 1 `i -> 2 `i `uc ]
+"52
+[; ;PWM.c: 52:     }
+}
+[e $U 5  ]
+"53
+[; ;PWM.c: 53:     else
+[e :U 4 ]
+"54
+[; ;PWM.c: 54:     {
+{
+"56
+[; ;PWM.c: 56:         if(1u == 1u)
+[e $ ! == -> 1 `ui -> 1 `ui 6  ]
+"57
+[; ;PWM.c: 57:         {
+{
+"58
+[; ;PWM.c: 58:             *(volatile uint8*)0xF94 &= ~(1 << 1);
+[e =& *U -> -> 3988 `i `*Vuc -> ~ << -> 1 `i -> 1 `i `uc ]
+"59
+[; ;PWM.c: 59:         }
+}
+[e $U 7  ]
+"60
+[; ;PWM.c: 60:         else
+[e :U 6 ]
+"61
+[; ;PWM.c: 61:         {
+{
+"62
+[; ;PWM.c: 62:             *(volatile uint8*)0xF93 &= ~(1 << 3);
+[e =& *U -> -> 3987 `i `*Vuc -> ~ << -> 1 `i -> 3 `i `uc ]
+"63
+[; ;PWM.c: 63:         }
+}
+[e :U 7 ]
+"64
+[; ;PWM.c: 64:     }
+}
+[e :U 5 ]
+"65
+[; ;PWM.c: 65: }
+[e :UE 3 ]
+}
+"79
+[; ;PWM.c: 79: void PWM_Start(EnumPWM_channel_t a_PWM_channel_t)
+[v _PWM_Start `(v ~T0 @X0 1 ef1`E10 ]
+"80
+[; ;PWM.c: 80: {
+{
+[e :U _PWM_Start ]
+"79
+[; ;PWM.c: 79: void PWM_Start(EnumPWM_channel_t a_PWM_channel_t)
+[v _a_PWM_channel_t `E10 ~T0 @X0 1 r1 ]
+"80
+[; ;PWM.c: 80: {
+[f ]
+"82
+[; ;PWM.c: 82:     if(a_PWM_channel_t == PWM_CHANNEL_1)
+[e $ ! == -> _a_PWM_channel_t `ui -> . `E10 0 `ui 9  ]
+"83
+[; ;PWM.c: 83:     {
+{
+"85
+[; ;PWM.c: 85:         *(volatile uint8*)0xFBD |= 1 << 3u;
+[e =| *U -> -> 4029 `i `*Vuc -> << -> 1 `i -> 3 `ui `uc ]
+"86
+[; ;PWM.c: 86:         *(volatile uint8*)0xFBD |= 1 << 2u;
+[e =| *U -> -> 4029 `i `*Vuc -> << -> 1 `i -> 2 `ui `uc ]
+"87
+[; ;PWM.c: 87:     }
+}
+[e $U 10  ]
+"88
+[; ;PWM.c: 88:     else
+[e :U 9 ]
+"89
+[; ;PWM.c: 89:     {
+{
+"91
+[; ;PWM.c: 91:         *(volatile uint8*)0xFBA |= 1 << 3u;
+[e =| *U -> -> 4026 `i `*Vuc -> << -> 1 `i -> 3 `ui `uc ]
+"92
+[; ;PWM.c: 92:         *(volatile uint8*)0xFBA |= 1 << 2u;
+[e =| *U -> -> 4026 `i `*Vuc -> << -> 1 `i -> 2 `ui `uc ]
+"93
+[; ;PWM.c: 93:     }
+}
+[e :U 10 ]
+"95
+[; ;PWM.c: 95: }
+[e :UE 8 ]
+}
+"109
+[; ;PWM.c: 109: void PWM_Stop(EnumPWM_channel_t a_PWM_channel_t)
+[v _PWM_Stop `(v ~T0 @X0 1 ef1`E10 ]
+"110
+[; ;PWM.c: 110: {
+{
+[e :U _PWM_Stop ]
+"109
+[; ;PWM.c: 109: void PWM_Stop(EnumPWM_channel_t a_PWM_channel_t)
+[v _a_PWM_channel_t `E10 ~T0 @X0 1 r1 ]
+"110
+[; ;PWM.c: 110: {
+[f ]
+"112
+[; ;PWM.c: 112:     if(a_PWM_channel_t == PWM_CHANNEL_1)
+[e $ ! == -> _a_PWM_channel_t `ui -> . `E10 0 `ui 12  ]
+"113
+[; ;PWM.c: 113:     {
+{
+"115
+[; ;PWM.c: 115:         *(volatile uint8*)0xFBD &= ~(1 << 3u);
+[e =& *U -> -> 4029 `i `*Vuc -> ~ << -> 1 `i -> 3 `ui `uc ]
+"116
+[; ;PWM.c: 116:         *(volatile uint8*)0xFBD &= ~(1 << 2u);
+[e =& *U -> -> 4029 `i `*Vuc -> ~ << -> 1 `i -> 2 `ui `uc ]
+"117
+[; ;PWM.c: 117:         *(volatile uint8*)0xFBD &= ~(1 << 1u);
+[e =& *U -> -> 4029 `i `*Vuc -> ~ << -> 1 `i -> 1 `ui `uc ]
+"118
+[; ;PWM.c: 118:         *(volatile uint8*)0xFBD &= ~(1 << 0u);
+[e =& *U -> -> 4029 `i `*Vuc -> ~ << -> 1 `i -> 0 `ui `uc ]
+"120
+[; ;PWM.c: 120:         *(volatile uint8*)0xF8B &= ~(1 << 2);
+[e =& *U -> -> 3979 `i `*Vuc -> ~ << -> 1 `i -> 2 `i `uc ]
+"121
+[; ;PWM.c: 121:     }
+}
+[e $U 13  ]
+"122
+[; ;PWM.c: 122:     else
+[e :U 12 ]
+"123
+[; ;PWM.c: 123:     {
+{
+"125
+[; ;PWM.c: 125:         *(volatile uint8*)0xFBA &= ~(1 << 3u);
+[e =& *U -> -> 4026 `i `*Vuc -> ~ << -> 1 `i -> 3 `ui `uc ]
+"126
+[; ;PWM.c: 126:         *(volatile uint8*)0xFBA &= ~(1 << 2u);
+[e =& *U -> -> 4026 `i `*Vuc -> ~ << -> 1 `i -> 2 `ui `uc ]
+"127
+[; ;PWM.c: 127:         *(volatile uint8*)0xFBA &= ~(1 << 1u);
+[e =& *U -> -> 4026 `i `*Vuc -> ~ << -> 1 `i -> 1 `ui `uc ]
+"128
+[; ;PWM.c: 128:         *(volatile uint8*)0xFBA &= ~(1 << 0u);
+[e =& *U -> -> 4026 `i `*Vuc -> ~ << -> 1 `i -> 0 `ui `uc ]
+"130
+[; ;PWM.c: 130:         if(1u == 1u)
+[e $ ! == -> 1 `ui -> 1 `ui 14  ]
+"131
+[; ;PWM.c: 131:         {
+{
+"133
+[; ;PWM.c: 133:             *(volatile uint8*)0xF8B &= ~(1 << 1);
+[e =& *U -> -> 3979 `i `*Vuc -> ~ << -> 1 `i -> 1 `i `uc ]
+"134
+[; ;PWM.c: 134:         }
+}
+[e $U 15  ]
+"135
+[; ;PWM.c: 135:         else
+[e :U 14 ]
+"136
+[; ;PWM.c: 136:         {
+{
+"138
+[; ;PWM.c: 138:             *(volatile uint8*)0xF8A &= ~(1 << 3);
+[e =& *U -> -> 3978 `i `*Vuc -> ~ << -> 1 `i -> 3 `i `uc ]
+"139
+[; ;PWM.c: 139:         }
+}
+[e :U 15 ]
+"140
+[; ;PWM.c: 140:     }
+}
+[e :U 13 ]
+"141
+[; ;PWM.c: 141: }
+[e :UE 11 ]
+}
+"154
+[; ;PWM.c: 154: void PWM_Frequency(uint32 a_u32PWM_frequency)
+[v _PWM_Frequency `(v ~T0 @X0 1 ef1`ul ]
+"155
+[; ;PWM.c: 155: {
+{
+[e :U _PWM_Frequency ]
+"154
+[; ;PWM.c: 154: void PWM_Frequency(uint32 a_u32PWM_frequency)
+[v _a_u32PWM_frequency `ul ~T0 @X0 1 r1 ]
+"155
+[; ;PWM.c: 155: {
+[f ]
+"157
+[; ;PWM.c: 157:     if((8000000u / (a_u32PWM_frequency * 64)) < 256)
+[e $ ! < / -> 8000000 `ul * _a_u32PWM_frequency -> -> -> 64 `i `l `ul -> -> -> 256 `i `l `ul 17  ]
+"158
+[; ;PWM.c: 158:     {
+{
+"160
+[; ;PWM.c: 160:         uint16 u8period_register_val = (8000000u / (a_u32PWM_frequency * 4)) - 1;
+[v _u8period_register_val `us ~T0 @X0 1 a ]
+[e = _u8period_register_val -> - / -> 8000000 `ul * _a_u32PWM_frequency -> -> -> 4 `i `l `ul -> -> -> 1 `i `l `ul `us ]
+"163
+[; ;PWM.c: 163:         g_u16PWM_reg_value_at_100DutyCycle = 8000000u / a_u32PWM_frequency;
+[e = _g_u16PWM_reg_value_at_100DutyCycle -> / -> 8000000 `ul _a_u32PWM_frequency `us ]
+"165
+[; ;PWM.c: 165:         if(u8period_register_val <= 255)
+[e $ ! <= -> _u8period_register_val `ui -> -> 255 `i `ui 18  ]
+"166
+[; ;PWM.c: 166:         {
+{
+"168
+[; ;PWM.c: 168:             Timer2_config_t.timer_prescaler_t = TIMER2_NO_PRESCALER;
+[e = . _Timer2_config_t 0 . `E62 0 ]
+"170
+[; ;PWM.c: 170:             Timer2_write_period_register(u8period_register_val);
+[e ( _Timer2_write_period_register (1 -> _u8period_register_val `uc ]
+"171
+[; ;PWM.c: 171:         }
+}
+[e $U 19  ]
+"173
+[; ;PWM.c: 173:         else if(u8period_register_val / 4 <= 255)
+[e :U 18 ]
+[e $ ! <= / -> _u8period_register_val `ui -> -> 4 `i `ui -> -> 255 `i `ui 20  ]
+"174
+[; ;PWM.c: 174:         {
+{
+"177
+[; ;PWM.c: 177:             g_u16PWM_reg_value_at_100DutyCycle /= 4;
+[e =/ _g_u16PWM_reg_value_at_100DutyCycle -> -> 4 `i `ui ]
+"179
+[; ;PWM.c: 179:             Timer2_config_t.timer_prescaler_t = TIMER2_PRESCALER_4;
+[e = . _Timer2_config_t 0 . `E62 1 ]
+"181
+[; ;PWM.c: 181:             Timer2_write_period_register(u8period_register_val / 4);
+[e ( _Timer2_write_period_register (1 -> / -> _u8period_register_val `ui -> -> 4 `i `ui `uc ]
+"182
+[; ;PWM.c: 182:         }
+}
+[e $U 21  ]
+"184
+[; ;PWM.c: 184:         else
+[e :U 20 ]
+"185
+[; ;PWM.c: 185:         {
+{
+"188
+[; ;PWM.c: 188:             g_u16PWM_reg_value_at_100DutyCycle /= 16;
+[e =/ _g_u16PWM_reg_value_at_100DutyCycle -> -> 16 `i `ui ]
+"190
+[; ;PWM.c: 190:             Timer2_config_t.timer_prescaler_t = TIMER2_PRESCALER_16;
+[e = . _Timer2_config_t 0 . `E62 2 ]
+"192
+[; ;PWM.c: 192:             Timer2_write_period_register(u8period_register_val / 16);
+[e ( _Timer2_write_period_register (1 -> / -> _u8period_register_val `ui -> -> 16 `i `ui `uc ]
+"193
+[; ;PWM.c: 193:         }
+}
+[e :U 21 ]
+[e :U 19 ]
+"195
+[; ;PWM.c: 195:         Timer2_Initialization();
+[e ( _Timer2_Initialization ..  ]
+"196
+[; ;PWM.c: 196:     }
+}
+[e $U 22  ]
+"197
+[; ;PWM.c: 197:     else
+[e :U 17 ]
+"198
+[; ;PWM.c: 198:     {
+{
+"200
+[; ;PWM.c: 200:         g_u16PWM_reg_value_at_100DutyCycle = 0;
+[e = _g_u16PWM_reg_value_at_100DutyCycle -> -> 0 `i `us ]
+"201
+[; ;PWM.c: 201:     }
+}
+[e :U 22 ]
+"202
+[; ;PWM.c: 202: }
+[e :UE 16 ]
+}
+"217
+[; ;PWM.c: 217: void PWM_DutyCycle(EnumPWM_channel_t a_PWM_channel_t , uint8 a_u16PWM_duty_cycle)
+[v _PWM_DutyCycle `(v ~T0 @X0 1 ef2`E10`uc ]
+"218
+[; ;PWM.c: 218: {
+{
+[e :U _PWM_DutyCycle ]
+"217
+[; ;PWM.c: 217: void PWM_DutyCycle(EnumPWM_channel_t a_PWM_channel_t , uint8 a_u16PWM_duty_cycle)
+[v _a_PWM_channel_t `E10 ~T0 @X0 1 r1 ]
+[v _a_u16PWM_duty_cycle `uc ~T0 @X0 1 r2 ]
+"218
+[; ;PWM.c: 218: {
+[f ]
+"220
+[; ;PWM.c: 220:     uint16 u16PWM_register_val = (uint16)((uint32)g_u16PWM_reg_value_at_100DutyCycle *
+[v _u16PWM_register_val `us ~T0 @X0 1 a ]
+[e = _u16PWM_register_val -> / * -> _g_u16PWM_reg_value_at_100DutyCycle `ul -> _a_u16PWM_duty_cycle `ul -> -> -> 100 `i `l `ul `us ]
+"223
+[; ;PWM.c: 223:     if(a_PWM_channel_t == PWM_CHANNEL_1)
+[e $ ! == -> _a_PWM_channel_t `ui -> . `E10 0 `ui 24  ]
+"224
+[; ;PWM.c: 224:     {
+{
+"227
+[; ;PWM.c: 227:         if(u16PWM_register_val & 0x0001)
+[e $ ! != & -> _u16PWM_register_val `ui -> -> 1 `i `ui -> -> 0 `i `ui 25  ]
+"228
+[; ;PWM.c: 228:         {
+{
+"229
+[; ;PWM.c: 229:             *(volatile uint8*)0xFBD |= 1 << 4u;
+[e =| *U -> -> 4029 `i `*Vuc -> << -> 1 `i -> 4 `ui `uc ]
+"230
+[; ;PWM.c: 230:         }
+}
+[e $U 26  ]
+"231
+[; ;PWM.c: 231:         else
+[e :U 25 ]
+"232
+[; ;PWM.c: 232:         {
+{
+"233
+[; ;PWM.c: 233:             *(volatile uint8*)0xFBD &= ~(1 << 4u);
+[e =& *U -> -> 4029 `i `*Vuc -> ~ << -> 1 `i -> 4 `ui `uc ]
+"234
+[; ;PWM.c: 234:         }
+}
+[e :U 26 ]
+"237
+[; ;PWM.c: 237:         if(u16PWM_register_val & 0x0002)
+[e $ ! != & -> _u16PWM_register_val `ui -> -> 2 `i `ui -> -> 0 `i `ui 27  ]
+"238
+[; ;PWM.c: 238:         {
+{
+"239
+[; ;PWM.c: 239:             *(volatile uint8*)0xFBD |= 1 << 5u;
+[e =| *U -> -> 4029 `i `*Vuc -> << -> 1 `i -> 5 `ui `uc ]
+"240
+[; ;PWM.c: 240:         }
+}
+[e $U 28  ]
+"241
+[; ;PWM.c: 241:         else
+[e :U 27 ]
+"242
+[; ;PWM.c: 242:         {
+{
+"243
+[; ;PWM.c: 243:             *(volatile uint8*)0xFBD &= ~(1 << 5u);
+[e =& *U -> -> 4029 `i `*Vuc -> ~ << -> 1 `i -> 5 `ui `uc ]
+"244
+[; ;PWM.c: 244:         }
+}
+[e :U 28 ]
+"246
+[; ;PWM.c: 246:         *(volatile uint8*)0xFBE = u16PWM_register_val >> 2;
+[e = *U -> -> 4030 `i `*Vuc -> >> -> _u16PWM_register_val `ui -> 2 `i `uc ]
+"247
+[; ;PWM.c: 247:     }
+}
+[e $U 29  ]
+"248
+[; ;PWM.c: 248:     else
+[e :U 24 ]
+"249
+[; ;PWM.c: 249:     {
+{
+"252
+[; ;PWM.c: 252:         if(u16PWM_register_val & 0x0001)
+[e $ ! != & -> _u16PWM_register_val `ui -> -> 1 `i `ui -> -> 0 `i `ui 30  ]
+"253
+[; ;PWM.c: 253:         {
+{
+"254
+[; ;PWM.c: 254:             *(volatile uint8*)0xFBA |= 1 << 4u;
+[e =| *U -> -> 4026 `i `*Vuc -> << -> 1 `i -> 4 `ui `uc ]
+"255
+[; ;PWM.c: 255:         }
+}
+[e $U 31  ]
+"256
+[; ;PWM.c: 256:         else
+[e :U 30 ]
+"257
+[; ;PWM.c: 257:         {
+{
+"258
+[; ;PWM.c: 258:             *(volatile uint8*)0xFBA &= ~(1 << 4u);
+[e =& *U -> -> 4026 `i `*Vuc -> ~ << -> 1 `i -> 4 `ui `uc ]
+"259
+[; ;PWM.c: 259:         }
+}
+[e :U 31 ]
+"262
+[; ;PWM.c: 262:         if(u16PWM_register_val & 0x0002)
+[e $ ! != & -> _u16PWM_register_val `ui -> -> 2 `i `ui -> -> 0 `i `ui 32  ]
+"263
+[; ;PWM.c: 263:         {
+{
+"264
+[; ;PWM.c: 264:             *(volatile uint8*)0xFBA |= 1 << 5u;
+[e =| *U -> -> 4026 `i `*Vuc -> << -> 1 `i -> 5 `ui `uc ]
+"265
+[; ;PWM.c: 265:         }
+}
+[e $U 33  ]
+"266
+[; ;PWM.c: 266:         else
+[e :U 32 ]
+"267
+[; ;PWM.c: 267:         {
+{
+"268
+[; ;PWM.c: 268:             *(volatile uint8*)0xFBA &= ~(1 << 5u);
+[e =& *U -> -> 4026 `i `*Vuc -> ~ << -> 1 `i -> 5 `ui `uc ]
+"269
+[; ;PWM.c: 269:         }
+}
+[e :U 33 ]
+"271
+[; ;PWM.c: 271:         *(volatile uint8*)0xFBB = u16PWM_register_val >> 2;
+[e = *U -> -> 4027 `i `*Vuc -> >> -> _u16PWM_register_val `ui -> 2 `i `uc ]
+"272
+[; ;PWM.c: 272:     }
+}
+[e :U 29 ]
+"275
+[; ;PWM.c: 275:    Timer2_enable();
+[e ( _Timer2_enable ..  ]
+"276
+[; ;PWM.c: 276: }
+[e :UE 23 ]
+}

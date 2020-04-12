@@ -1,0 +1,49 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"25 timer_config.c
+[; ;timer_config.c: 25: StrTimer0_config_t Timer0_config_t = {TIMER0_PRESCALER_32 , TIMER_16BIT_SIZE ,
+[c E18 0 1 2 3 4 5 6 7 8 .. ]
+[n E18 . TIMER0_PRESCALER_2 TIMER0_PRESCALER_4 TIMER0_PRESCALER_8 TIMER0_PRESCALER_16 TIMER0_PRESCALER_32 TIMER0_PRESCALER_64 TIMER0_PRESCALER_128 TIMER0_PRESCALER_256 TIMER0_NO_PRESCALER  ]
+[c E10 0 1 .. ]
+[n E10 . TIMER_8BIT_SIZE TIMER_16BIT_SIZE  ]
+[c E14 0 1 .. ]
+[n E14 . TIMER_INTERNAL_CLOCK TIMER_TRANSITION_ON_TCKI_PIN  ]
+[c E29 0 1 2 .. ]
+[n E29 . TIMER0_RISING_EDGE_CLOCK_ON_TCKI TIMER0_FALLING_EDGE_CLOCK_ON_TCKI TIMER0_NO_TRANSITION_ON_TCKI  ]
+"68 ./timers.h
+[; ;./timers.h: 68: typedef struct{
+[s S1 `E18 1 `E10 1 `E14 1 `E29 1 ]
+[n S1 . timer_prescaler_t timer_size_t timer_clock_source_t timer_edge_type_on_TCKI_t ]
+"39 timer_config.c
+[; ;timer_config.c: 39: StrTimer2_config_t Timer2_config_t = {TIMER2_NO_PRESCALER , TIMER2_POSTSCALER_1};
+[c E47 0 1 2 .. ]
+[n E47 . TIMER2_NO_PRESCALER TIMER2_PRESCALER_4 TIMER2_PRESCALER_16  ]
+[c E52 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E52 . TIMER2_POSTSCALER_1 TIMER2_POSTSCALER_2 TIMER2_POSTSCALER_3 TIMER2_POSTSCALER_4 TIMER2_POSTSCALER_5 TIMER2_POSTSCALER_6 TIMER2_POSTSCALER_7 TIMER2_POSTSCALER_8 TIMER2_POSTSCALER_9 TIMER2_POSTSCALER_10 TIMER2_POSTSCALER_11 TIMER2_POSTSCALER_12 TIMER2_POSTSCALER_13 TIMER2_POSTSCALER_14 TIMER2_POSTSCALER_15 TIMER2_POSTSCALER_16  ]
+"376 ./timers.h
+[; ;./timers.h: 376: typedef struct{
+[s S2 `E47 1 `E52 1 ]
+[n S2 . timer_prescaler_t timer_postscaler_t ]
+"25 timer_config.c
+[; ;timer_config.c: 25: StrTimer0_config_t Timer0_config_t = {TIMER0_PRESCALER_32 , TIMER_16BIT_SIZE ,
+[v _Timer0_config_t `S1 ~T0 @X0 1 e ]
+[i _Timer0_config_t
+:U ..
+:U ..
+. `E18 4
+. `E10 1
+. `E14 0
+. `E29 2
+..
+..
+]
+"39
+[; ;timer_config.c: 39: StrTimer2_config_t Timer2_config_t = {TIMER2_NO_PRESCALER , TIMER2_POSTSCALER_1};
+[v _Timer2_config_t `S2 ~T0 @X0 1 e ]
+[i _Timer2_config_t
+:U ..
+:U ..
+. `E47 0
+. `E52 0
+..
+..
+]

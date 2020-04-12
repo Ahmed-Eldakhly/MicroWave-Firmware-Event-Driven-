@@ -1,0 +1,502 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"36 ADC.c
+[; ;ADC.c: 36: void ADC_Initialization(EnumADC_channels_t a_ADC_channel_t)
+[c E10 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E10 . ADC_CHANNEL_0 ADC_CHANNEL_1 ADC_CHANNEL_2 ADC_CHANNEL_3 ADC_CHANNEL_4 ADC_CHANNEL_5 ADC_CHANNEL_6 ADC_CHANNEL_7 ADC_CHANNEL_8 ADC_CHANNEL_9 ADC_CHANNEL_10 ADC_CHANNEL_11 ADC_CHANNEL_12  ]
+"118
+[; ;ADC.c: 118: void ADC_Select_acquisition_time(EnumADC_acquisition_Time_t a_ADC_acquisition_Time_t)
+[c E25 0 1 2 3 4 5 6 7 .. ]
+[n E25 . ADC_ACQUISITION_TIME_0 ADC_ACQUISITION_TIME_2 ADC_ACQUISITION_TIME_4 ADC_ACQUISITION_TIME_6 ADC_ACQUISITION_TIME_8 ADC_ACQUISITION_TIME_12 ADC_ACQUISITION_TIME_16 ADC_ACQUISITION_TIME_20  ]
+"139
+[; ;ADC.c: 139: void ADC_Select_prescaler(EnumADC_prescaler_t a_ADC_prescaler_t)
+[c E35 0 1 2 3 4 5 6 .. ]
+[n E35 . ADC_PRESCALER_2 ADC_PRESCALER_8 ADC_PRESCALER_32 ADC_OSCILLATOR_CLOCK ADC_PRESCALER_4 ADC_PRESCALER_16 ADC_PRESCALER_64  ]
+"224
+[; ;ADC.c: 224: void ADC_Set_result_format(EnumADC_result_format_t a_ADC_result_format_t)
+[c E44 0 1 .. ]
+[n E44 . ADC_RESULT_LEFT_JUSTIFIED ADC_RESULT_RIGHT_JUSTIFIED  ]
+"253
+[; ;ADC.c: 253: void ADC_Set_Vref(EnumADC_Vref_type_t a_ADC_Vref_type_t , EnumADC_Vref_value_t a_ADC_Vref_value_t)
+[c E48 0 1 .. ]
+[n E48 . ADC_V_REF_HIGH ADC_V_REF_LOW  ]
+[c E52 0 1 .. ]
+[n E52 . ADC_V_REF_INPUT_PIN ADC_V_REF_DEFAULT_VALUE  ]
+"36 ADC.c
+[; ;ADC.c: 36: void ADC_Initialization(EnumADC_channels_t a_ADC_channel_t)
+[v _ADC_Initialization `(v ~T0 @X0 1 ef1`E10 ]
+"37
+[; ;ADC.c: 37: {
+{
+[e :U _ADC_Initialization ]
+"36
+[; ;ADC.c: 36: void ADC_Initialization(EnumADC_channels_t a_ADC_channel_t)
+[v _a_ADC_channel_t `E10 ~T0 @X0 1 r1 ]
+"37
+[; ;ADC.c: 37: {
+[f ]
+"39
+[; ;ADC.c: 39:     *(volatile uint8*)0xFC2 &= 0xC3;
+[e =& *U -> -> 4034 `i `*Vuc -> -> 195 `i `uc ]
+"41
+[; ;ADC.c: 41:     *(volatile uint8*)0xFC2 |= a_ADC_channel_t << 2;
+[e =| *U -> -> 4034 `i `*Vuc -> << -> _a_ADC_channel_t `ui -> 2 `i `uc ]
+"44
+[; ;ADC.c: 44:     *(volatile uint8*)0xFC1 &= 0xF0;
+[e =& *U -> -> 4033 `i `*Vuc -> -> 240 `i `uc ]
+"45
+[; ;ADC.c: 45:     switch(a_ADC_channel_t)
+[e $U 3  ]
+"46
+[; ;ADC.c: 46:     {
+{
+"47
+[; ;ADC.c: 47:         case ADC_CHANNEL_0:
+[e :U 4 ]
+"48
+[; ;ADC.c: 48:             *(volatile uint8*)0xFC1 |= 0x0E;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 14 `i `uc ]
+"49
+[; ;ADC.c: 49:             *(volatile uint8*)0xF92 |= 1 << 0u;
+[e =| *U -> -> 3986 `i `*Vuc -> << -> 1 `i -> 0 `ui `uc ]
+"50
+[; ;ADC.c: 50:             break;
+[e $U 2  ]
+"51
+[; ;ADC.c: 51:         case ADC_CHANNEL_1:
+[e :U 5 ]
+"52
+[; ;ADC.c: 52:             *(volatile uint8*)0xFC1 |= 0x0D;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 13 `i `uc ]
+"53
+[; ;ADC.c: 53:             *(volatile uint8*)0xF92 |= 1 << 1u;
+[e =| *U -> -> 3986 `i `*Vuc -> << -> 1 `i -> 1 `ui `uc ]
+"54
+[; ;ADC.c: 54:             break;
+[e $U 2  ]
+"55
+[; ;ADC.c: 55:         case ADC_CHANNEL_2:
+[e :U 6 ]
+"56
+[; ;ADC.c: 56:             *(volatile uint8*)0xFC1 |= 0x0C;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 12 `i `uc ]
+"57
+[; ;ADC.c: 57:             *(volatile uint8*)0xF92 |= 1 << 2u;
+[e =| *U -> -> 3986 `i `*Vuc -> << -> 1 `i -> 2 `ui `uc ]
+"58
+[; ;ADC.c: 58:             break;
+[e $U 2  ]
+"59
+[; ;ADC.c: 59:         case ADC_CHANNEL_3:
+[e :U 7 ]
+"60
+[; ;ADC.c: 60:             *(volatile uint8*)0xFC1 |= 0x0B;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 11 `i `uc ]
+"61
+[; ;ADC.c: 61:             *(volatile uint8*)0xF92 |= 1 << 3u;
+[e =| *U -> -> 3986 `i `*Vuc -> << -> 1 `i -> 3 `ui `uc ]
+"62
+[; ;ADC.c: 62:             break;
+[e $U 2  ]
+"63
+[; ;ADC.c: 63:         case ADC_CHANNEL_4:
+[e :U 8 ]
+"64
+[; ;ADC.c: 64:             *(volatile uint8*)0xFC1 |= 0x0A;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 10 `i `uc ]
+"65
+[; ;ADC.c: 65:             *(volatile uint8*)0xF92 |= 1 << 5u;
+[e =| *U -> -> 3986 `i `*Vuc -> << -> 1 `i -> 5 `ui `uc ]
+"66
+[; ;ADC.c: 66:             break;
+[e $U 2  ]
+"67
+[; ;ADC.c: 67:         case ADC_CHANNEL_5:
+[e :U 9 ]
+"68
+[; ;ADC.c: 68:             *(volatile uint8*)0xFC1 |= 0x09;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 9 `i `uc ]
+"69
+[; ;ADC.c: 69:             *(volatile uint8*)0xF96 |= 1 << 0u;
+[e =| *U -> -> 3990 `i `*Vuc -> << -> 1 `i -> 0 `ui `uc ]
+"70
+[; ;ADC.c: 70:             break;
+[e $U 2  ]
+"71
+[; ;ADC.c: 71:         case ADC_CHANNEL_6:
+[e :U 10 ]
+"72
+[; ;ADC.c: 72:             *(volatile uint8*)0xFC1 |= 0x08;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 8 `i `uc ]
+"73
+[; ;ADC.c: 73:             *(volatile uint8*)0xF96 |= 1 << 1u;
+[e =| *U -> -> 3990 `i `*Vuc -> << -> 1 `i -> 1 `ui `uc ]
+"74
+[; ;ADC.c: 74:             break;
+[e $U 2  ]
+"75
+[; ;ADC.c: 75:         case ADC_CHANNEL_7:
+[e :U 11 ]
+"76
+[; ;ADC.c: 76:             *(volatile uint8*)0xFC1 |= 0x07;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 7 `i `uc ]
+"77
+[; ;ADC.c: 77:             *(volatile uint8*)0xF96 |= 1 << 2u;
+[e =| *U -> -> 3990 `i `*Vuc -> << -> 1 `i -> 2 `ui `uc ]
+"78
+[; ;ADC.c: 78:             break;
+[e $U 2  ]
+"79
+[; ;ADC.c: 79:         case ADC_CHANNEL_8:
+[e :U 12 ]
+"80
+[; ;ADC.c: 80:             *(volatile uint8*)0xFC1 |= 0x06;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 6 `i `uc ]
+"81
+[; ;ADC.c: 81:             *(volatile uint8*)0xF93 |= 1 << 2u;
+[e =| *U -> -> 3987 `i `*Vuc -> << -> 1 `i -> 2 `ui `uc ]
+"82
+[; ;ADC.c: 82:             break;
+[e $U 2  ]
+"83
+[; ;ADC.c: 83:         case ADC_CHANNEL_9:
+[e :U 13 ]
+"84
+[; ;ADC.c: 84:             *(volatile uint8*)0xFC1 |= 0x05;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 5 `i `uc ]
+"85
+[; ;ADC.c: 85:             *(volatile uint8*)0xF93 |= 1 << 3u;
+[e =| *U -> -> 3987 `i `*Vuc -> << -> 1 `i -> 3 `ui `uc ]
+"86
+[; ;ADC.c: 86:             break;
+[e $U 2  ]
+"87
+[; ;ADC.c: 87:         case ADC_CHANNEL_10:
+[e :U 14 ]
+"88
+[; ;ADC.c: 88:             *(volatile uint8*)0xFC1 |= 0x04;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 4 `i `uc ]
+"89
+[; ;ADC.c: 89:             *(volatile uint8*)0xF93 |= 1 << 1u;
+[e =| *U -> -> 3987 `i `*Vuc -> << -> 1 `i -> 1 `ui `uc ]
+"90
+[; ;ADC.c: 90:             break;
+[e $U 2  ]
+"91
+[; ;ADC.c: 91:         case ADC_CHANNEL_11:
+[e :U 15 ]
+"92
+[; ;ADC.c: 92:             *(volatile uint8*)0xFC1 |= 0x03;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 3 `i `uc ]
+"93
+[; ;ADC.c: 93:             *(volatile uint8*)0xF93 |= 1 << 4u;
+[e =| *U -> -> 3987 `i `*Vuc -> << -> 1 `i -> 4 `ui `uc ]
+"94
+[; ;ADC.c: 94:             break;
+[e $U 2  ]
+"95
+[; ;ADC.c: 95:         case ADC_CHANNEL_12:
+[e :U 16 ]
+"96
+[; ;ADC.c: 96:             *(volatile uint8*)0xFC1 |= 0x02;
+[e =| *U -> -> 4033 `i `*Vuc -> -> 2 `i `uc ]
+"97
+[; ;ADC.c: 97:             *(volatile uint8*)0xF93 |= 1 << 0u;
+[e =| *U -> -> 3987 `i `*Vuc -> << -> 1 `i -> 0 `ui `uc ]
+"98
+[; ;ADC.c: 98:             break;
+[e $U 2  ]
+"99
+[; ;ADC.c: 99:         default:
+[e :U 17 ]
+"101
+[; ;ADC.c: 101:             break;
+[e $U 2  ]
+"102
+[; ;ADC.c: 102:     }
+}
+[e $U 2  ]
+[e :U 3 ]
+[e [\ -> _a_ADC_channel_t `ui , $ -> . `E10 0 `ui 4
+ , $ -> . `E10 1 `ui 5
+ , $ -> . `E10 2 `ui 6
+ , $ -> . `E10 3 `ui 7
+ , $ -> . `E10 4 `ui 8
+ , $ -> . `E10 5 `ui 9
+ , $ -> . `E10 6 `ui 10
+ , $ -> . `E10 7 `ui 11
+ , $ -> . `E10 8 `ui 12
+ , $ -> . `E10 9 `ui 13
+ , $ -> . `E10 10 `ui 14
+ , $ -> . `E10 11 `ui 15
+ , $ -> . `E10 12 `ui 16
+ 17 ]
+[e :U 2 ]
+"103
+[; ;ADC.c: 103: }
+[e :UE 1 ]
+}
+"118
+[; ;ADC.c: 118: void ADC_Select_acquisition_time(EnumADC_acquisition_Time_t a_ADC_acquisition_Time_t)
+[v _ADC_Select_acquisition_time `(v ~T0 @X0 1 ef1`E25 ]
+"119
+[; ;ADC.c: 119: {
+{
+[e :U _ADC_Select_acquisition_time ]
+"118
+[; ;ADC.c: 118: void ADC_Select_acquisition_time(EnumADC_acquisition_Time_t a_ADC_acquisition_Time_t)
+[v _a_ADC_acquisition_Time_t `E25 ~T0 @X0 1 r1 ]
+"119
+[; ;ADC.c: 119: {
+[f ]
+"121
+[; ;ADC.c: 121:     *(volatile uint8*)0xFC0 &= 0xC7;
+[e =& *U -> -> 4032 `i `*Vuc -> -> 199 `i `uc ]
+"123
+[; ;ADC.c: 123:     *(volatile uint8*)0xFC0 |= a_ADC_acquisition_Time_t << 3;
+[e =| *U -> -> 4032 `i `*Vuc -> << -> _a_ADC_acquisition_Time_t `ui -> 3 `i `uc ]
+"124
+[; ;ADC.c: 124: }
+[e :UE 18 ]
+}
+"139
+[; ;ADC.c: 139: void ADC_Select_prescaler(EnumADC_prescaler_t a_ADC_prescaler_t)
+[v _ADC_Select_prescaler `(v ~T0 @X0 1 ef1`E35 ]
+"140
+[; ;ADC.c: 140: {
+{
+[e :U _ADC_Select_prescaler ]
+"139
+[; ;ADC.c: 139: void ADC_Select_prescaler(EnumADC_prescaler_t a_ADC_prescaler_t)
+[v _a_ADC_prescaler_t `E35 ~T0 @X0 1 r1 ]
+"140
+[; ;ADC.c: 140: {
+[f ]
+"142
+[; ;ADC.c: 142:     *(volatile uint8*)0xFC0 &= 0xF8;
+[e =& *U -> -> 4032 `i `*Vuc -> -> 248 `i `uc ]
+"144
+[; ;ADC.c: 144:     *(volatile uint8*)0xFC0 |= a_ADC_prescaler_t;
+[e =| *U -> -> 4032 `i `*Vuc -> _a_ADC_prescaler_t `uc ]
+"146
+[; ;ADC.c: 146:     *(volatile uint8*)0xFC2 |= 1 << 0u;
+[e =| *U -> -> 4034 `i `*Vuc -> << -> 1 `i -> 0 `ui `uc ]
+"147
+[; ;ADC.c: 147: }
+[e :UE 19 ]
+}
+"160
+[; ;ADC.c: 160: uint16 ADC_Read_value(void)
+[v _ADC_Read_value `(us ~T0 @X0 1 ef ]
+"161
+[; ;ADC.c: 161: {
+{
+[e :U _ADC_Read_value ]
+[f ]
+"162
+[; ;ADC.c: 162:     uint16 retVal = 5;
+[v _retVal `us ~T0 @X0 1 a ]
+[e = _retVal -> -> 5 `i `us ]
+"164
+[; ;ADC.c: 164:     while(((*(volatile uint8*)0xFC2 >> 1u) & 0x01));
+[e $U 21  ]
+[e :U 22 ]
+[e :U 21 ]
+[e $ != & >> -> *U -> -> 4034 `i `*Vuc `i -> 1 `ui -> 1 `i -> 0 `i 22  ]
+[e :U 23 ]
+"166
+[; ;ADC.c: 166:     if((*(volatile uint8*)0xFC0 >> 7u) & 0x01)
+[e $ ! != & >> -> *U -> -> 4032 `i `*Vuc `i -> 7 `ui -> 1 `i -> 0 `i 24  ]
+"167
+[; ;ADC.c: 167:     {
+{
+"169
+[; ;ADC.c: 169:         retVal = (uint16)*(volatile uint8*)0xFC4 << 8 | *(volatile uint8*)0xFC3;
+[e = _retVal -> | << -> -> *U -> -> 4036 `i `*Vuc `us `ui -> 8 `i -> *U -> -> 4035 `i `*Vuc `ui `us ]
+"170
+[; ;ADC.c: 170:     }
+}
+[e $U 25  ]
+"171
+[; ;ADC.c: 171:     else
+[e :U 24 ]
+"172
+[; ;ADC.c: 172:     {
+{
+"174
+[; ;ADC.c: 174:         retVal = (uint16)*(volatile uint8*)0xFC4 << 2 | *(volatile uint8*)0xFC3 >> 6;
+[e = _retVal -> | << -> -> *U -> -> 4036 `i `*Vuc `us `ui -> 2 `i -> >> -> *U -> -> 4035 `i `*Vuc `i -> 6 `i `ui `us ]
+"175
+[; ;ADC.c: 175:     }
+}
+[e :U 25 ]
+"176
+[; ;ADC.c: 176:     return retVal;
+[e ) _retVal ]
+[e $UE 20  ]
+"177
+[; ;ADC.c: 177: }
+[e :UE 20 ]
+}
+"190
+[; ;ADC.c: 190: void ADC_Start_conversion(void)
+[v _ADC_Start_conversion `(v ~T0 @X0 1 ef ]
+"191
+[; ;ADC.c: 191: {
+{
+[e :U _ADC_Start_conversion ]
+[f ]
+"192
+[; ;ADC.c: 192:     *(volatile uint8*)0xFC2 |= 1 << 1u;
+[e =| *U -> -> 4034 `i `*Vuc -> << -> 1 `i -> 1 `ui `uc ]
+"193
+[; ;ADC.c: 193: }
+[e :UE 26 ]
+}
+"206
+[; ;ADC.c: 206: void ADC_Disable()
+[v _ADC_Disable `(v ~T0 @X0 1 ef ]
+"207
+[; ;ADC.c: 207: {
+{
+[e :U _ADC_Disable ]
+[f ]
+"208
+[; ;ADC.c: 208:     *(volatile uint8*)0xFC2 &= ~(1 << 0u);
+[e =& *U -> -> 4034 `i `*Vuc -> ~ << -> 1 `i -> 0 `ui `uc ]
+"209
+[; ;ADC.c: 209: }
+[e :UE 27 ]
+}
+"224
+[; ;ADC.c: 224: void ADC_Set_result_format(EnumADC_result_format_t a_ADC_result_format_t)
+[v _ADC_Set_result_format `(v ~T0 @X0 1 ef1`E44 ]
+"225
+[; ;ADC.c: 225: {
+{
+[e :U _ADC_Set_result_format ]
+"224
+[; ;ADC.c: 224: void ADC_Set_result_format(EnumADC_result_format_t a_ADC_result_format_t)
+[v _a_ADC_result_format_t `E44 ~T0 @X0 1 r1 ]
+"225
+[; ;ADC.c: 225: {
+[f ]
+"227
+[; ;ADC.c: 227:     if(a_ADC_result_format_t == ADC_RESULT_LEFT_JUSTIFIED)
+[e $ ! == -> _a_ADC_result_format_t `ui -> . `E44 0 `ui 29  ]
+"228
+[; ;ADC.c: 228:     {
+{
+"229
+[; ;ADC.c: 229:         *(volatile uint8*)0xFC0 &= ~(1 << 7u);
+[e =& *U -> -> 4032 `i `*Vuc -> ~ << -> 1 `i -> 7 `ui `uc ]
+"230
+[; ;ADC.c: 230:     }
+}
+[e $U 30  ]
+"231
+[; ;ADC.c: 231:     else
+[e :U 29 ]
+"232
+[; ;ADC.c: 232:     {
+{
+"233
+[; ;ADC.c: 233:         *(volatile uint8*)0xFC0 |= 1 << 7u;
+[e =| *U -> -> 4032 `i `*Vuc -> << -> 1 `i -> 7 `ui `uc ]
+"234
+[; ;ADC.c: 234:     }
+}
+[e :U 30 ]
+"235
+[; ;ADC.c: 235: }
+[e :UE 28 ]
+}
+"253
+[; ;ADC.c: 253: void ADC_Set_Vref(EnumADC_Vref_type_t a_ADC_Vref_type_t , EnumADC_Vref_value_t a_ADC_Vref_value_t)
+[v _ADC_Set_Vref `(v ~T0 @X0 1 ef2`E48`E52 ]
+"254
+[; ;ADC.c: 254: {
+{
+[e :U _ADC_Set_Vref ]
+"253
+[; ;ADC.c: 253: void ADC_Set_Vref(EnumADC_Vref_type_t a_ADC_Vref_type_t , EnumADC_Vref_value_t a_ADC_Vref_value_t)
+[v _a_ADC_Vref_type_t `E48 ~T0 @X0 1 r1 ]
+[v _a_ADC_Vref_value_t `E52 ~T0 @X0 1 r2 ]
+"254
+[; ;ADC.c: 254: {
+[f ]
+"256
+[; ;ADC.c: 256:     if(a_ADC_Vref_type_t == ADC_V_REF_HIGH)
+[e $ ! == -> _a_ADC_Vref_type_t `ui -> . `E48 0 `ui 32  ]
+"257
+[; ;ADC.c: 257:     {
+{
+"259
+[; ;ADC.c: 259:         if(a_ADC_Vref_value_t == ADC_V_REF_INPUT_PIN)
+[e $ ! == -> _a_ADC_Vref_value_t `ui -> . `E52 0 `ui 33  ]
+"260
+[; ;ADC.c: 260:         {
+{
+"261
+[; ;ADC.c: 261:             *(volatile uint8*)0xFC1 |= 1 << 4u;
+[e =| *U -> -> 4033 `i `*Vuc -> << -> 1 `i -> 4 `ui `uc ]
+"262
+[; ;ADC.c: 262:         }
+}
+[e $U 34  ]
+"263
+[; ;ADC.c: 263:         else
+[e :U 33 ]
+"264
+[; ;ADC.c: 264:         {
+{
+"265
+[; ;ADC.c: 265:             *(volatile uint8*)0xFC1 &= ~(1 << 4u);
+[e =& *U -> -> 4033 `i `*Vuc -> ~ << -> 1 `i -> 4 `ui `uc ]
+"266
+[; ;ADC.c: 266:         }
+}
+[e :U 34 ]
+"267
+[; ;ADC.c: 267:     }
+}
+[e $U 35  ]
+"268
+[; ;ADC.c: 268:     else
+[e :U 32 ]
+"269
+[; ;ADC.c: 269:     {
+{
+"271
+[; ;ADC.c: 271:         if(a_ADC_Vref_value_t == ADC_V_REF_INPUT_PIN)
+[e $ ! == -> _a_ADC_Vref_value_t `ui -> . `E52 0 `ui 36  ]
+"272
+[; ;ADC.c: 272:         {
+{
+"273
+[; ;ADC.c: 273:             *(volatile uint8*)0xFC1 |= 1 << 5u;
+[e =| *U -> -> 4033 `i `*Vuc -> << -> 1 `i -> 5 `ui `uc ]
+"274
+[; ;ADC.c: 274:         }
+}
+[e $U 37  ]
+"275
+[; ;ADC.c: 275:         else
+[e :U 36 ]
+"276
+[; ;ADC.c: 276:         {
+{
+"277
+[; ;ADC.c: 277:             *(volatile uint8*)0xFC1 &= ~(1 << 5u);
+[e =& *U -> -> 4033 `i `*Vuc -> ~ << -> 1 `i -> 5 `ui `uc ]
+"278
+[; ;ADC.c: 278:         }
+}
+[e :U 37 ]
+"279
+[; ;ADC.c: 279:     }
+}
+[e :U 35 ]
+"280
+[; ;ADC.c: 280: }
+[e :UE 31 ]
+}

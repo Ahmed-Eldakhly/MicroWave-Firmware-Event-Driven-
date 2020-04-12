@@ -1,0 +1,887 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4520 ]
+[d frameptr 4065 ]
+"36 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\ADC.c
+[e E10 . `uc
+ADC_CHANNEL_0 0
+ADC_CHANNEL_1 1
+ADC_CHANNEL_2 2
+ADC_CHANNEL_3 3
+ADC_CHANNEL_4 4
+ADC_CHANNEL_5 5
+ADC_CHANNEL_6 6
+ADC_CHANNEL_7 7
+ADC_CHANNEL_8 8
+ADC_CHANNEL_9 9
+ADC_CHANNEL_10 10
+ADC_CHANNEL_11 11
+ADC_CHANNEL_12 12
+]
+"118
+[e E25 . `uc
+ADC_ACQUISITION_TIME_0 0
+ADC_ACQUISITION_TIME_2 1
+ADC_ACQUISITION_TIME_4 2
+ADC_ACQUISITION_TIME_6 3
+ADC_ACQUISITION_TIME_8 4
+ADC_ACQUISITION_TIME_12 5
+ADC_ACQUISITION_TIME_16 6
+ADC_ACQUISITION_TIME_20 7
+]
+"139
+[e E35 . `uc
+ADC_PRESCALER_2 0
+ADC_PRESCALER_8 1
+ADC_PRESCALER_32 2
+ADC_OSCILLATOR_CLOCK 3
+ADC_PRESCALER_4 4
+ADC_PRESCALER_16 5
+ADC_PRESCALER_64 6
+]
+"224
+[e E44 . `uc
+ADC_RESULT_LEFT_JUSTIFIED 0
+ADC_RESULT_RIGHT_JUSTIFIED 1
+]
+"253
+[e E48 . `uc
+ADC_V_REF_HIGH 0
+ADC_V_REF_LOW 1
+]
+[e E52 . `uc
+ADC_V_REF_INPUT_PIN 0
+ADC_V_REF_DEFAULT_VALUE 1
+]
+"36 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\GPIO.c
+[e E10 . `uc
+GPIO_CORRECT_SET 0
+GPIO_UNCORRECT_SET 1
+]
+"59 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\KeyPad.c
+[e E12 . `uc
+GPIO_CORRECT_SET 0
+GPIO_UNCORRECT_SET 1
+]
+"48 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\LCD.c
+[e E10 . `uc
+GPIO_CORRECT_SET 0
+GPIO_UNCORRECT_SET 1
+]
+"23 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\main.c
+[e E2534 . `uc
+GPIO_CORRECT_SET 0
+GPIO_UNCORRECT_SET 1
+]
+"46
+[e E2586 . `uc
+PWM_CHANNEL_1 0
+PWM_CHANNEL_2 1
+]
+"51
+[e E2685 . `uc
+ADC_CHANNEL_0 0
+ADC_CHANNEL_1 1
+ADC_CHANNEL_2 2
+ADC_CHANNEL_3 3
+ADC_CHANNEL_4 4
+ADC_CHANNEL_5 5
+ADC_CHANNEL_6 6
+ADC_CHANNEL_7 7
+ADC_CHANNEL_8 8
+ADC_CHANNEL_9 9
+ADC_CHANNEL_10 10
+ADC_CHANNEL_11 11
+ADC_CHANNEL_12 12
+]
+"53
+[e E2700 . `uc
+ADC_ACQUISITION_TIME_0 0
+ADC_ACQUISITION_TIME_2 1
+ADC_ACQUISITION_TIME_4 2
+ADC_ACQUISITION_TIME_6 3
+ADC_ACQUISITION_TIME_8 4
+ADC_ACQUISITION_TIME_12 5
+ADC_ACQUISITION_TIME_16 6
+ADC_ACQUISITION_TIME_20 7
+]
+"56
+[e E2710 . `uc
+ADC_PRESCALER_2 0
+ADC_PRESCALER_8 1
+ADC_PRESCALER_32 2
+ADC_OSCILLATOR_CLOCK 3
+ADC_PRESCALER_4 4
+ADC_PRESCALER_16 5
+ADC_PRESCALER_64 6
+]
+"96
+[e E2745 . `uc
+SYSTEM_IDLE_STATE 0
+SYSTEM_HEATING_STATE 1
+SYSTEM_END_TIME 2
+]
+"42 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[e E221 . `uc
+SYSTEM_IDLE_STATE 0
+SYSTEM_HEATING_STATE 1
+SYSTEM_END_TIME 2
+]
+"50
+[e E2765 . `uc
+DOOR_IS_OPENED 0
+DOOR_IS_CLOSED 1
+]
+"52
+[e E2769 . `uc
+MICROWAVE_IS_EMPTY 0
+MICROWAVE_HAS_SOMETHING_INSIDE 1
+]
+"144
+[e E62 . `uc
+PWM_CHANNEL_1 0
+PWM_CHANNEL_2 1
+]
+"375
+[e E10 . `uc
+GPIO_CORRECT_SET 0
+GPIO_UNCORRECT_SET 1
+]
+"44 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\PWM.c
+[e E10 . `uc
+PWM_CHANNEL_1 0
+PWM_CHANNEL_2 1
+]
+"47
+[e E62 . `uc
+TIMER2_NO_PRESCALER 0
+TIMER2_PRESCALER_4 1
+TIMER2_PRESCALER_16 2
+]
+[e E67 . `uc
+TIMER2_POSTSCALER_1 0
+TIMER2_POSTSCALER_2 1
+TIMER2_POSTSCALER_3 2
+TIMER2_POSTSCALER_4 3
+TIMER2_POSTSCALER_5 4
+TIMER2_POSTSCALER_6 5
+TIMER2_POSTSCALER_7 6
+TIMER2_POSTSCALER_8 7
+TIMER2_POSTSCALER_9 8
+TIMER2_POSTSCALER_10 9
+TIMER2_POSTSCALER_11 10
+TIMER2_POSTSCALER_12 11
+TIMER2_POSTSCALER_13 12
+TIMER2_POSTSCALER_14 13
+TIMER2_POSTSCALER_15 14
+TIMER2_POSTSCALER_16 15
+]
+"25 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timer_config.c
+[e E18 . `uc
+TIMER0_PRESCALER_2 0
+TIMER0_PRESCALER_4 1
+TIMER0_PRESCALER_8 2
+TIMER0_PRESCALER_16 3
+TIMER0_PRESCALER_32 4
+TIMER0_PRESCALER_64 5
+TIMER0_PRESCALER_128 6
+TIMER0_PRESCALER_256 7
+TIMER0_NO_PRESCALER 8
+]
+[e E10 . `uc
+TIMER_8BIT_SIZE 0
+TIMER_16BIT_SIZE 1
+]
+[e E14 . `uc
+TIMER_INTERNAL_CLOCK 0
+TIMER_TRANSITION_ON_TCKI_PIN 1
+]
+[e E29 . `uc
+TIMER0_RISING_EDGE_CLOCK_ON_TCKI 0
+TIMER0_FALLING_EDGE_CLOCK_ON_TCKI 1
+TIMER0_NO_TRANSITION_ON_TCKI 2
+]
+"39
+[e E47 . `uc
+TIMER2_NO_PRESCALER 0
+TIMER2_PRESCALER_4 1
+TIMER2_PRESCALER_16 2
+]
+[e E52 . `uc
+TIMER2_POSTSCALER_1 0
+TIMER2_POSTSCALER_2 1
+TIMER2_POSTSCALER_3 2
+TIMER2_POSTSCALER_4 3
+TIMER2_POSTSCALER_5 4
+TIMER2_POSTSCALER_6 5
+TIMER2_POSTSCALER_7 6
+TIMER2_POSTSCALER_8 7
+TIMER2_POSTSCALER_9 8
+TIMER2_POSTSCALER_10 9
+TIMER2_POSTSCALER_11 10
+TIMER2_POSTSCALER_12 11
+TIMER2_POSTSCALER_13 12
+TIMER2_POSTSCALER_14 13
+TIMER2_POSTSCALER_15 14
+TIMER2_POSTSCALER_16 15
+]
+"41 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timers.c
+[e E18 . `uc
+TIMER0_PRESCALER_2 0
+TIMER0_PRESCALER_4 1
+TIMER0_PRESCALER_8 2
+TIMER0_PRESCALER_16 3
+TIMER0_PRESCALER_32 4
+TIMER0_PRESCALER_64 5
+TIMER0_PRESCALER_128 6
+TIMER0_PRESCALER_256 7
+TIMER0_NO_PRESCALER 8
+]
+[e E10 . `uc
+TIMER_8BIT_SIZE 0
+TIMER_16BIT_SIZE 1
+]
+[e E14 . `uc
+TIMER_INTERNAL_CLOCK 0
+TIMER_TRANSITION_ON_TCKI_PIN 1
+]
+[e E29 . `uc
+TIMER0_RISING_EDGE_CLOCK_ON_TCKI 0
+TIMER0_FALLING_EDGE_CLOCK_ON_TCKI 1
+TIMER0_NO_TRANSITION_ON_TCKI 2
+]
+"440
+[e E47 . `uc
+TIMER2_NO_PRESCALER 0
+TIMER2_PRESCALER_4 1
+TIMER2_PRESCALER_16 2
+]
+[e E52 . `uc
+TIMER2_POSTSCALER_1 0
+TIMER2_POSTSCALER_2 1
+TIMER2_POSTSCALER_3 2
+TIMER2_POSTSCALER_4 3
+TIMER2_POSTSCALER_5 4
+TIMER2_POSTSCALER_6 5
+TIMER2_POSTSCALER_7 6
+TIMER2_POSTSCALER_8 7
+TIMER2_POSTSCALER_9 8
+TIMER2_POSTSCALER_10 9
+TIMER2_POSTSCALER_11 10
+TIMER2_POSTSCALER_12 11
+TIMER2_POSTSCALER_13 12
+TIMER2_POSTSCALER_14 13
+TIMER2_POSTSCALER_15 14
+TIMER2_POSTSCALER_16 15
+]
+"36 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\ADC.c
+[v _ADC_Initialization ADC_Initialization `(v  1 e 1 0 ]
+"118
+[v _ADC_Select_acquisition_time ADC_Select_acquisition_time `(v  1 e 1 0 ]
+"139
+[v _ADC_Select_prescaler ADC_Select_prescaler `(v  1 e 1 0 ]
+"160
+[v _ADC_Read_value ADC_Read_value `(us  1 e 2 0 ]
+"190
+[v _ADC_Start_conversion ADC_Start_conversion `(v  1 e 1 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"36 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\GPIO.c
+[v _GPIO_SetPinDirection GPIO_SetPinDirection `(E10  1 e 1 0 ]
+"306
+[v _GPIO_WriteOnPin GPIO_WriteOnPin `(E10  1 e 1 0 ]
+"463
+[v _GPIO_WriteOnPort GPIO_WriteOnPort `(E10  1 e 1 0 ]
+"510
+[v _GPIO_ReadFromPin GPIO_ReadFromPin `(uc  1 e 1 0 ]
+"724
+[v _GPIO_Disable_Comparator_On_PORTA GPIO_Disable_Comparator_On_PORTA `(v  1 e 1 0 ]
+"742
+[v _GPIO_Disable_ADC_On_Pins GPIO_Disable_ADC_On_Pins `(E10  1 e 1 0 ]
+"848
+[v _GPIO_Enable_Pull_Up_On_PortB GPIO_Enable_Pull_Up_On_PortB `(v  1 e 1 0 ]
+"42 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\interrupt.c
+[v _Timer0_enable_overflow_interrupt Timer0_enable_overflow_interrupt `(v  1 e 1 0 ]
+"58
+[v _Timer0_disable_overflow_interrupt Timer0_disable_overflow_interrupt `(v  1 e 1 0 ]
+"74
+[v _Timer0_set_callback_function Timer0_set_callback_function `(v  1 e 1 0 ]
+"1266
+[v _Global_interrupt_enable Global_interrupt_enable `(v  1 e 1 0 ]
+"1283
+[v _Global_interrupt_disable Global_interrupt_disable `(v  1 e 1 0 ]
+"1335
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+"54 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\KeyPad.c
+[v _KeyPad_Initialization KeyPad_Initialization `(v  1 e 1 0 ]
+"80
+[v _KeyPad_getPressedKey KeyPad_getPressedKey `(uc  1 e 1 0 ]
+"127
+[v _KeyPad_switch KeyPad_switch `(uc  1 s 1 KeyPad_switch ]
+"42 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\LCD.c
+[v _LCD_Initialization LCD_Initialization `(v  1 e 1 0 ]
+"92
+[v _LCD_SendCommand LCD_SendCommand `(v  1 e 1 0 ]
+"128
+[v _LCD_SendDataByte LCD_SendDataByte `(v  1 e 1 0 ]
+"208
+[v _LCD_SendDataString LCD_SendDataString `(v  1 e 1 0 ]
+"232
+[v _LCD_SetDisplayPosition LCD_SetDisplayPosition `(v  1 e 1 0 ]
+"317
+[v _LCD_DisplaNumber LCD_DisplaNumber `(v  1 e 1 0 ]
+"372
+[v _LCD_ClearScreen LCD_ClearScreen `(v  1 e 1 0 ]
+"20 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"80 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _Display_remind_time Display_remind_time `(v  1 e 1 0 ]
+"109
+[v _TIMER0_ISR TIMER0_ISR `(v  1 e 1 0 ]
+"134
+[v _Set_and_Display_desired_temp Set_and_Display_desired_temp `(v  1 e 1 0 ]
+"174
+[v _Door_sensor_function Door_sensor_function `(v  1 e 1 0 ]
+"215
+[v _Weight_sensor_function Weight_sensor_function `(v  1 e 1 0 ]
+"258
+[v _User_insert_time_and_start_heating_function User_insert_time_and_start_heating_function `(v  1 e 1 0 ]
+"430
+[v _If_heating_is_canceled_function If_heating_is_canceled_function `(v  1 e 1 0 ]
+"477
+[v _Heating_process_has_done_function Heating_process_has_done_function `(v  1 e 1 0 ]
+"542
+[v _Reset_to_idle_state Reset_to_idle_state `(v  1 e 1 0 ]
+"583
+[v _Welcome_screen_display Welcome_screen_display `(v  1 e 1 0 ]
+"609
+[v _Home_screen_display Home_screen_display `(v  1 e 1 0 ]
+"44 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\PWM.c
+[v _PWM_Initialization PWM_Initialization `(v  1 e 1 0 ]
+"79
+[v _PWM_Start PWM_Start `(v  1 e 1 0 ]
+"109
+[v _PWM_Stop PWM_Stop `(v  1 e 1 0 ]
+"154
+[v _PWM_Frequency PWM_Frequency `(v  1 e 1 0 ]
+"217
+[v _PWM_DutyCycle PWM_DutyCycle `(v  1 e 1 0 ]
+"39 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timers.c
+[v _Timer0_Initialization Timer0_Initialization `(v  1 e 1 0 ]
+"91
+[v _Timer0_enable Timer0_enable `(v  1 e 1 0 ]
+"107
+[v _Timer0_disable Timer0_disable `(v  1 e 1 0 ]
+"151
+[v _Timer0_write_counter Timer0_write_counter `(v  1 e 1 0 ]
+"437
+[v _Timer2_Initialization Timer2_Initialization `(v  1 e 1 0 ]
+"456
+[v _Timer2_enable Timer2_enable `(v  1 e 1 0 ]
+"539
+[v _Timer2_write_period_register Timer2_write_period_register `(v  1 e 1 0 ]
+"29 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\interrupt.c
+[v _timer0_callback_ptr timer0_callback_ptr `*.37(v  1 s 2 timer0_callback_ptr ]
+"25 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\LCD.c
+[v _g_u8position g_u8position `uc  1 s 1 g_u8position ]
+"40 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _g_u16MicrowaveTime g_u16MicrowaveTime `us  1 e 2 0 ]
+"42
+[v _g_system_state_var_t g_system_state_var_t `E2745  1 e 1 0 ]
+"48
+[v _g_u8heating_finished_flag g_u8heating_finished_flag `uc  1 s 1 g_u8heating_finished_flag ]
+"50
+[v _g_door_state_t g_door_state_t `E2765  1 s 1 g_door_state_t ]
+"52
+[v _g_inside_microwave g_inside_microwave `E2769  1 s 1 g_inside_microwave ]
+"54
+[v _g_u8timer_arr g_u8timer_arr `[6]uc  1 s 6 g_u8timer_arr ]
+"56
+[v _g_u8time_digits g_u8time_digits `uc  1 s 1 g_u8time_digits ]
+"58
+[v _g_u8keypad_button_val g_u8keypad_button_val `uc  1 s 1 g_u8keypad_button_val ]
+"60
+[v _g_u8temperature g_u8temperature `uc  1 s 1 g_u8temperature ]
+"62
+[v _g_u8old_temp_reading g_u8old_temp_reading `uc  1 s 1 g_u8old_temp_reading ]
+"25 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\PWM.c
+[v _g_u16PWM_reg_value_at_100DutyCycle g_u16PWM_reg_value_at_100DutyCycle `us  1 s 2 g_u16PWM_reg_value_at_100DutyCycle ]
+[s S552 . 4 `E18 1 timer_prescaler_t 1 0 `E10 1 timer_size_t 1 1 `E14 1 timer_clock_source_t 1 2 `E29 1 timer_edge_type_on_TCKI_t 1 3 ]
+"25 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timer_config.c
+[v _Timer0_config_t Timer0_config_t `S552  1 e 4 0 ]
+[s S499 . 2 `E62 1 timer_prescaler_t 1 0 `E67 1 timer_postscaler_t 1 1 ]
+"39
+[v _Timer2_config_t Timer2_config_t `S499  1 e 2 0 ]
+"20 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"112
+} 0
+"583 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _Welcome_screen_display Welcome_screen_display `(v  1 e 1 0 ]
+{
+"595
+} 0
+"215
+[v _Weight_sensor_function Weight_sensor_function `(v  1 e 1 0 ]
+{
+"242
+} 0
+"258
+[v _User_insert_time_and_start_heating_function User_insert_time_and_start_heating_function `(v  1 e 1 0 ]
+{
+"407
+} 0
+"42 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\interrupt.c
+[v _Timer0_enable_overflow_interrupt Timer0_enable_overflow_interrupt `(v  1 e 1 0 ]
+{
+"45
+} 0
+"91 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timers.c
+[v _Timer0_enable Timer0_enable `(v  1 e 1 0 ]
+{
+"94
+} 0
+"79 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\PWM.c
+[v _PWM_Start PWM_Start `(v  1 e 1 0 ]
+{
+[v PWM_Start@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 wreg ]
+[v PWM_Start@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 wreg ]
+"82
+[v PWM_Start@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 5 ]
+"95
+} 0
+"1266 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\interrupt.c
+[v _Global_interrupt_enable Global_interrupt_enable `(v  1 e 1 0 ]
+{
+"1269
+} 0
+"74
+[v _Timer0_set_callback_function Timer0_set_callback_function `(v  1 e 1 0 ]
+{
+[v Timer0_set_callback_function@a_function_ptr a_function_ptr `*.37(v  1 p 2 5 ]
+"78
+} 0
+"39 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timers.c
+[v _Timer0_Initialization Timer0_Initialization `(v  1 e 1 0 ]
+{
+"78
+} 0
+"134 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _Set_and_Display_desired_temp Set_and_Display_desired_temp `(v  1 e 1 0 ]
+{
+"156
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 17 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 13 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 15 ]
+"53
+} 0
+"217 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\PWM.c
+[v _PWM_DutyCycle PWM_DutyCycle `(v  1 e 1 0 ]
+{
+[v PWM_DutyCycle@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 wreg ]
+"220
+[v PWM_DutyCycle@u16PWM_register_val u16PWM_register_val `us  1 a 2 34 ]
+"217
+[v PWM_DutyCycle@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 wreg ]
+[v PWM_DutyCycle@a_u16PWM_duty_cycle a_u16PWM_duty_cycle `uc  1 p 1 30 ]
+"220
+[v PWM_DutyCycle@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 33 ]
+"276
+} 0
+"456 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timers.c
+[v _Timer2_enable Timer2_enable `(v  1 e 1 0 ]
+{
+"459
+} 0
+"317 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\LCD.c
+[v _LCD_DisplaNumber LCD_DisplaNumber `(v  1 e 1 0 ]
+{
+"343
+[v LCD_DisplaNumber@u8counter u8counter `uc  1 a 1 41 ]
+"335
+[v LCD_DisplaNumber@div div `ul  1 a 4 47 ]
+"334
+[v LCD_DisplaNumber@check check `ul  1 a 4 42 ]
+"332
+[v LCD_DisplaNumber@DigitNo DigitNo `uc  1 a 1 46 ]
+"317
+[v LCD_DisplaNumber@a_s32number a_s32number `l  1 p 4 30 ]
+"359
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 13 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 5 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 9 ]
+"129
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+{
+"10
+[v ___llmod@counter counter `uc  1 a 1 13 ]
+"7
+[v ___llmod@dividend dividend `ul  1 p 4 5 ]
+[v ___llmod@divisor divisor `ul  1 p 4 9 ]
+"25
+} 0
+"190 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\ADC.c
+[v _ADC_Start_conversion ADC_Start_conversion `(v  1 e 1 0 ]
+{
+"193
+} 0
+"160
+[v _ADC_Read_value ADC_Read_value `(us  1 e 2 0 ]
+{
+"162
+[v ADC_Read_value@retVal retVal `us  1 a 2 11 ]
+"177
+} 0
+"542 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _Reset_to_idle_state Reset_to_idle_state `(v  1 e 1 0 ]
+{
+"570
+} 0
+"609
+[v _Home_screen_display Home_screen_display `(v  1 e 1 0 ]
+{
+"638
+} 0
+"174
+[v _Door_sensor_function Door_sensor_function `(v  1 e 1 0 ]
+{
+"197
+} 0
+"44 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\PWM.c
+[v _PWM_Initialization PWM_Initialization `(v  1 e 1 0 ]
+{
+[v PWM_Initialization@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 wreg ]
+[v PWM_Initialization@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 wreg ]
+"47
+[v PWM_Initialization@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 5 ]
+"65
+} 0
+"154
+[v _PWM_Frequency PWM_Frequency `(v  1 e 1 0 ]
+{
+"160
+[v PWM_Frequency@u8period_register_val u8period_register_val `us  1 a 2 38 ]
+"154
+[v PWM_Frequency@a_u32PWM_frequency a_u32PWM_frequency `ul  1 p 4 30 ]
+"202
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 25 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 29 ]
+"7
+[v ___lldiv@dividend dividend `ul  1 p 4 17 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 21 ]
+"30
+} 0
+"539 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timers.c
+[v _Timer2_write_period_register Timer2_write_period_register `(v  1 e 1 0 ]
+{
+[v Timer2_write_period_register@a_u8init_value_for_period_register a_u8init_value_for_period_register `uc  1 a 1 wreg ]
+[v Timer2_write_period_register@a_u8init_value_for_period_register a_u8init_value_for_period_register `uc  1 a 1 wreg ]
+"541
+[v Timer2_write_period_register@a_u8init_value_for_period_register a_u8init_value_for_period_register `uc  1 a 1 5 ]
+"542
+} 0
+"437
+[v _Timer2_Initialization Timer2_Initialization `(v  1 e 1 0 ]
+{
+"443
+} 0
+"42 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\LCD.c
+[v _LCD_Initialization LCD_Initialization `(v  1 e 1 0 ]
+{
+"79
+} 0
+"430 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _If_heating_is_canceled_function If_heating_is_canceled_function `(v  1 e 1 0 ]
+{
+"459
+} 0
+"80 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\KeyPad.c
+[v _KeyPad_getPressedKey KeyPad_getPressedKey `(uc  1 e 1 0 ]
+{
+"92
+[v KeyPad_getPressedKey@u8colCounter u8colCounter `uc  1 a 1 14 ]
+"86
+[v KeyPad_getPressedKey@u8rowCounter u8rowCounter `uc  1 a 1 13 ]
+"83
+[v KeyPad_getPressedKey@ReturnVal ReturnVal `uc  1 a 1 12 ]
+"113
+} 0
+"127
+[v _KeyPad_switch KeyPad_switch `(uc  1 s 1 KeyPad_switch ]
+{
+[v KeyPad_switch@a_u8row a_u8row `uc  1 a 1 wreg ]
+"130
+[v KeyPad_switch@ReturnVal ReturnVal `uc  1 a 1 9 ]
+"127
+[v KeyPad_switch@a_u8row a_u8row `uc  1 a 1 wreg ]
+[v KeyPad_switch@a_u8col a_u8col `uc  1 p 1 5 ]
+"130
+[v KeyPad_switch@a_u8row a_u8row `uc  1 a 1 8 ]
+"227
+} 0
+"510 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\GPIO.c
+[v _GPIO_ReadFromPin GPIO_ReadFromPin `(uc  1 e 1 0 ]
+{
+[v GPIO_ReadFromPin@a_u8port a_u8port `uc  1 a 1 wreg ]
+"512
+[v GPIO_ReadFromPin@retVal retVal `uc  1 a 1 9 ]
+"510
+[v GPIO_ReadFromPin@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_ReadFromPin@a_u8pin a_u8pin `uc  1 p 1 5 ]
+"512
+[v GPIO_ReadFromPin@a_u8port a_u8port `uc  1 a 1 8 ]
+"536
+} 0
+"54 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\KeyPad.c
+[v _KeyPad_Initialization KeyPad_Initialization `(v  1 e 1 0 ]
+{
+"63
+[v KeyPad_Initialization@u8counter_170 u8counter `uc  1 a 1 11 ]
+"57
+[v KeyPad_Initialization@u8counter u8counter `uc  1 a 1 12 ]
+"67
+} 0
+"36 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\GPIO.c
+[v _GPIO_SetPinDirection GPIO_SetPinDirection `(E10  1 e 1 0 ]
+{
+[v GPIO_SetPinDirection@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_SetPinDirection@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_SetPinDirection@a_u8pin a_u8pin `uc  1 p 1 5 ]
+[v GPIO_SetPinDirection@a_u8direction a_u8direction `uc  1 p 1 6 ]
+[v GPIO_SetPinDirection@a_u8port a_u8port `uc  1 a 1 9 ]
+"179
+} 0
+"477 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _Heating_process_has_done_function Heating_process_has_done_function `(v  1 e 1 0 ]
+{
+"480
+[v Heating_process_has_done_function@u8counter u8counter `us  1 s 2 u8counter ]
+"528
+} 0
+"58 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\interrupt.c
+[v _Timer0_disable_overflow_interrupt Timer0_disable_overflow_interrupt `(v  1 e 1 0 ]
+{
+"61
+} 0
+"107 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timers.c
+[v _Timer0_disable Timer0_disable `(v  1 e 1 0 ]
+{
+"110
+} 0
+"109 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\PWM.c
+[v _PWM_Stop PWM_Stop `(v  1 e 1 0 ]
+{
+[v PWM_Stop@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 wreg ]
+[v PWM_Stop@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 wreg ]
+"112
+[v PWM_Stop@a_PWM_channel_t a_PWM_channel_t `E10  1 a 1 5 ]
+"141
+} 0
+"208 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\LCD.c
+[v _LCD_SendDataString LCD_SendDataString `(v  1 e 1 0 ]
+{
+[v LCD_SendDataString@a_u8data_ptr a_u8data_ptr `*.35uc  1 p 2 17 ]
+"218
+} 0
+"372
+[v _LCD_ClearScreen LCD_ClearScreen `(v  1 e 1 0 ]
+{
+"377
+} 0
+"1283 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\interrupt.c
+[v _Global_interrupt_disable Global_interrupt_disable `(v  1 e 1 0 ]
+{
+"1286
+} 0
+"848 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\GPIO.c
+[v _GPIO_Enable_Pull_Up_On_PortB GPIO_Enable_Pull_Up_On_PortB `(v  1 e 1 0 ]
+{
+"851
+} 0
+"724
+[v _GPIO_Disable_Comparator_On_PORTA GPIO_Disable_Comparator_On_PORTA `(v  1 e 1 0 ]
+{
+"728
+} 0
+"742
+[v _GPIO_Disable_ADC_On_Pins GPIO_Disable_ADC_On_Pins `(E10  1 e 1 0 ]
+{
+[v GPIO_Disable_ADC_On_Pins@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_Disable_ADC_On_Pins@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_Disable_ADC_On_Pins@a_u8pin a_u8pin `uc  1 p 1 5 ]
+[v GPIO_Disable_ADC_On_Pins@a_u8port a_u8port `uc  1 a 1 8 ]
+"835
+} 0
+"80 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _Display_remind_time Display_remind_time `(v  1 e 1 0 ]
+{
+"94
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 30 ]
+"7
+[v ___lwmod@dividend dividend `ui  1 p 2 26 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 28 ]
+"25
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 23 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 25 ]
+"7
+[v ___lwdiv@dividend dividend `ui  1 p 2 19 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 21 ]
+"30
+} 0
+"128 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\LCD.c
+[v _LCD_SendDataByte LCD_SendDataByte `(v  1 e 1 0 ]
+{
+[v LCD_SendDataByte@a_u8data a_u8data `uc  1 a 1 wreg ]
+[v LCD_SendDataByte@a_u8data a_u8data `uc  1 a 1 wreg ]
+"131
+[v LCD_SendDataByte@a_u8data a_u8data `uc  1 a 1 16 ]
+"195
+} 0
+"232
+[v _LCD_SetDisplayPosition LCD_SetDisplayPosition `(v  1 e 1 0 ]
+{
+[v LCD_SetDisplayPosition@a_u8position_X a_u8position_X `uc  1 a 1 wreg ]
+[v LCD_SetDisplayPosition@a_u8position_X a_u8position_X `uc  1 a 1 wreg ]
+[v LCD_SetDisplayPosition@a_u8position_Y a_u8position_Y `uc  1 p 1 12 ]
+"235
+[v LCD_SetDisplayPosition@a_u8position_X a_u8position_X `uc  1 a 1 15 ]
+"268
+} 0
+"92
+[v _LCD_SendCommand LCD_SendCommand `(v  1 e 1 0 ]
+{
+[v LCD_SendCommand@a_u8command a_u8command `uc  1 a 1 wreg ]
+[v LCD_SendCommand@a_u8command a_u8command `uc  1 a 1 wreg ]
+"95
+[v LCD_SendCommand@a_u8command a_u8command `uc  1 a 1 11 ]
+"115
+} 0
+"463 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\GPIO.c
+[v _GPIO_WriteOnPort GPIO_WriteOnPort `(E10  1 e 1 0 ]
+{
+[v GPIO_WriteOnPort@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_WriteOnPort@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_WriteOnPort@a_u8value a_u8value `uc  1 p 1 5 ]
+[v GPIO_WriteOnPort@a_u8port a_u8port `uc  1 a 1 9 ]
+"496
+} 0
+"306
+[v _GPIO_WriteOnPin GPIO_WriteOnPin `(E10  1 e 1 0 ]
+{
+[v GPIO_WriteOnPin@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_WriteOnPin@a_u8port a_u8port `uc  1 a 1 wreg ]
+[v GPIO_WriteOnPin@a_u8pin a_u8pin `uc  1 p 1 5 ]
+[v GPIO_WriteOnPin@a_u8value a_u8value `uc  1 p 1 6 ]
+[v GPIO_WriteOnPin@a_u8port a_u8port `uc  1 a 1 9 ]
+"449
+} 0
+"139 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\ADC.c
+[v _ADC_Select_prescaler ADC_Select_prescaler `(v  1 e 1 0 ]
+{
+[v ADC_Select_prescaler@a_ADC_prescaler_t a_ADC_prescaler_t `E35  1 a 1 wreg ]
+[v ADC_Select_prescaler@a_ADC_prescaler_t a_ADC_prescaler_t `E35  1 a 1 wreg ]
+"142
+[v ADC_Select_prescaler@a_ADC_prescaler_t a_ADC_prescaler_t `E35  1 a 1 5 ]
+"147
+} 0
+"118
+[v _ADC_Select_acquisition_time ADC_Select_acquisition_time `(v  1 e 1 0 ]
+{
+[v ADC_Select_acquisition_time@a_ADC_acquisition_Time_t a_ADC_acquisition_Time_t `E25  1 a 1 wreg ]
+[v ADC_Select_acquisition_time@a_ADC_acquisition_Time_t a_ADC_acquisition_Time_t `E25  1 a 1 wreg ]
+"121
+[v ADC_Select_acquisition_time@a_ADC_acquisition_Time_t a_ADC_acquisition_Time_t `E25  1 a 1 5 ]
+"124
+} 0
+"36
+[v _ADC_Initialization ADC_Initialization `(v  1 e 1 0 ]
+{
+[v ADC_Initialization@a_ADC_channel_t a_ADC_channel_t `E10  1 a 1 wreg ]
+[v ADC_Initialization@a_ADC_channel_t a_ADC_channel_t `E10  1 a 1 wreg ]
+"39
+[v ADC_Initialization@a_ADC_channel_t a_ADC_channel_t `E10  1 a 1 7 ]
+"103
+} 0
+"1335 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\interrupt.c
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+{
+"1811
+} 0
+"109 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\microwave.c
+[v _TIMER0_ISR TIMER0_ISR `(v  1 e 1 0 ]
+{
+"117
+} 0
+"151 E:\MPLABXProjects\SwiftAct_Project_event trigger.X\timers.c
+[v _Timer0_write_counter Timer0_write_counter `(v  1 e 1 0 ]
+{
+[v Timer0_write_counter@a_u16init_value_for_timer a_u16init_value_for_timer `us  1 p 2 0 ]
+"163
+} 0
